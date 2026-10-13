@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Collections — Vastraa Luxury Indian Ethnic Wear</title>
+  <meta name="description" content="Explore handcrafted Indian ethnic couture at Vastraa. Discover handloom silk sarees, bridal lehengas, sherwanis, and children's festive collections.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Store Announcement">
+    <span>Complimentary Express Delivery on orders above ₹2,999 • Code: <strong>VASTRAA10</strong> for 10% discount</span>
+    <a href="shop.html" class="announcement-bar__link">Shop Now</a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-brand" aria-label="Vastraa Home">
+        <img src="assets/images/icons/logo.svg" alt="Vastraa Luxury Ethnic Wear" class="brand-logo" width="180" height="45">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="shop.html?category=women" class="nav-link" id="nav-link-women">Women</a>
+        <a href="shop.html?category=men" class="nav-link" id="nav-link-men">Men</a>
+        <a href="shop.html?category=kids" class="nav-link" id="nav-link-kids">Kids</a>
+        <a href="shop.html" class="nav-link active" id="nav-link-all">All Collections</a>
+        <a href="about.html" class="nav-link">Our Heritage</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Atelier</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="action-btn" data-action="open-search" aria-label="Search catalogue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <a href="wishlist.html" class="action-btn" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count" data-type="wishlist" aria-hidden="true"></span>
+        </a>
+        <button type="button" class="action-btn" data-action="open-cart" aria-label="Open Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count" data-type="cart" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="action-btn mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <img src="assets/images/icons/logo.svg" alt="Vastraa" class="drawer-logo" width="140" height="35">
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="mobile-nav-list">
+        <a href="shop.html?category=women" class="mobile-nav-link">Women's Couture</a>
+        <a href="shop.html?category=men" class="mobile-nav-link">Men's Attire</a>
+        <a href="shop.html?category=kids" class="mobile-nav-link">Kids' Festive</a>
+        <a href="shop.html" class="mobile-nav-link active">All Collections</a>
+        <a href="wishlist.html" class="mobile-nav-link">Saved Wishlist</a>
+        <a href="track-order.html" class="mobile-nav-link">Track Your Order</a>
+        <a href="about.html" class="mobile-nav-link">Our Heritage</a>
+          <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="contact.html" class="mobile-nav-link">Atelier Concierge</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Product Search" aria-hidden="true">
+    <div class="search-container">
+      <form role="search">
+        <div class="search-input-wrapper">
+          <label for="search-input" class="sr-only">Search products</label>
+          <input type="search" id="search-input" name="q" placeholder="Search sarees, lehengas, sherwanis...">
+          <button type="submit" class="search-submit-btn" aria-label="Submit Search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button type="button" class="search-close-btn" aria-label="Close search">&times;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h3>Your Shopping Bag</h3>
+      <button type="button" class="close-btn" aria-label="Close Shopping Bag">&times;</button>
+    </div>
+    <div class="cart-drawer__shipping-meter"></div>
+    <div class="cart-drawer__body"></div>
+    <div class="cart-drawer__footer"></div>
+  </aside>
+
+  <!-- Mobile Filter Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-filter-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-filter-drawer" id="mobile-filter-drawer" role="dialog" aria-modal="true" aria-label="Product Filters" aria-hidden="true">
+    <div class="filter-drawer-header">
+      <h3>Filter Ensembles</h3>
+      <button type="button" class="filter-drawer-close" aria-label="Close filters">&times;</button>
+    </div>
+    <div class="filter-drawer-body" id="mobile-filter-body">
+      <!-- Cloned or synced from desktop filters -->
+    </div>
+    <div class="filter-drawer-footer">
+      <button type="button" class="btn btn--secondary btn--full btn--sm" id="mobile-filter-reset">Reset</button>
+      <button type="button" class="btn btn--primary btn--full btn--sm" id="mobile-filter-apply">Apply Filters</button>
+    </div>
+  </aside>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main id="main-content">
+    
+    <!-- Banner Header -->
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumbs">
+          <a href="index.html">Home</a>
+          <span class="crumb-sep" aria-hidden="true">/</span>
+          <span class="current-crumb" id="breadcrumb-current">All Collections</span>
+        </nav>
+        <h1 class="banner-title" id="collection-page-title">Curated Ensembles</h1>
+        <p class="banner-desc" id="collection-page-desc">
+          Explore heirloom handloom weaves, master zardozi embroideries, and regal ceremonial attire across Women, Men, and Kids.
+        </p>
+
+        <!-- Category Switching Tabs -->
+        <div class="category-tabs" role="tablist" aria-label="Collection Categories">
+          <button type="button" class="tab-pill is-active" data-category="all" role="tab" aria-selected="true">All Pieces</button>
+          <button type="button" class="tab-pill" data-category="women" role="tab" aria-selected="false">Women</button>
+          <button type="button" class="tab-pill" data-category="men" role="tab" aria-selected="false">Men</button>
+          <button type="button" class="tab-pill" data-category="kids" role="tab" aria-selected="false">Kids</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogue Section -->
+    <section class="section section--sm">
+      <div class="container">
+        
+        <!-- Shop Toolbar -->
+        <div class="shop-toolbar">
+          <div class="toolbar-left">
+            <button type="button" class="btn btn--outline btn--sm mobile-filter-btn" id="open-filter-drawer-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+              Filters (<span id="filter-active-count">0</span>)
+            </button>
+            <div class="product-counter" id="product-count-display" aria-live="polite">Showing 18 ensembles</div>
+          </div>
+
+          <div class="toolbar-right">
+            <label for="sort-select" class="sort-label">Sort By:</label>
+            <select id="sort-select" class="sort-select">
+              <option value="featured">Featured Heirlooms</option>
+              <option value="newest">Newest Arrivals</option>
+              <option value="price_asc">Price: Low to High</option>
+              <option value="price_desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Active Filter Badges Bar -->
+        <div class="active-filters-bar" id="active-filters-bar" style="display: none;">
+          <span class="active-filter-label">Active Filters:</span>
+          <div id="active-pills-list" style="display: flex; gap: 0.5rem; flex-wrap: wrap;"></div>
+          <button type="button" class="clear-all-btn" id="clear-all-filters-btn">Clear All</button>
+        </div>
+
+        <!-- Main Layout Grid -->
+        <div class="shop-layout">
+          
+          <!-- Desktop Sidebar Filters -->
+          <aside class="filter-sidebar" aria-label="Product Facet Filters">
+            <div id="desktop-filter-form">
+              <!-- Subcategory Filter -->
+              <div class="filter-group">
+                <div class="filter-group__header">Subcategory</div>
+                <div class="filter-group__options">
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="all" checked>
+                    <span class="form-check-label">All Types</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="saree">
+                    <span class="form-check-label">Handloom Sarees</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="lehenga">
+                    <span class="form-check-label">Royal Lehengas</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="salwar-suit">
+                    <span class="form-check-label">Anarkalis & Suits</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="kurta-set">
+                    <span class="form-check-label">Kurta Churidar Sets</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="sherwani">
+                    <span class="form-check-label">Sherwanis & Bandhgalas</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="subcategory" value="nehru-jacket">
+                    <span class="form-check-label">Nehru & Bandi Jackets</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Occasion Filter -->
+              <div class="filter-group">
+                <div class="filter-group__header">Occasion</div>
+                <div class="filter-group__options">
+                  <label class="form-check">
+                    <input type="radio" name="occasion" value="all" checked>
+                    <span class="form-check-label">All Occasions</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="occasion" value="Bridal & Wedding">
+                    <span class="form-check-label">Bridal & Wedding</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="occasion" value="Festive Celebration">
+                    <span class="form-check-label">Festive Celebrations</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="occasion" value="Cocktail & Evening">
+                    <span class="form-check-label">Cocktail & Evening</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="occasion" value="Traditional Rituals">
+                    <span class="form-check-label">Traditional Rituals</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Size Filter -->
+              <div class="filter-group">
+                <div class="filter-group__header">Size</div>
+                <div class="filter-group__sizes" id="size-options-container">
+                  <button type="button" class="size-filter-btn is-active" data-size="all">All</button>
+                  <button type="button" class="size-filter-btn" data-size="XS">XS</button>
+                  <button type="button" class="size-filter-btn" data-size="S">S</button>
+                  <button type="button" class="size-filter-btn" data-size="M">M</button>
+                  <button type="button" class="size-filter-btn" data-size="L">L</button>
+                  <button type="button" class="size-filter-btn" data-size="XL">XL</button>
+                  <button type="button" class="size-filter-btn" data-size="Free Size">Free Size</button>
+                </div>
+              </div>
+
+              <!-- Price Range Filter -->
+              <div class="filter-group">
+                <div class="filter-group__header">Price Range</div>
+                <div class="filter-group__options">
+                  <label class="form-check">
+                    <input type="radio" name="priceRange" value="all" checked>
+                    <span class="form-check-label">All Prices</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="priceRange" value="0-1500000">
+                    <span class="form-check-label">Under ₹15,000</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="priceRange" value="1500000-3000000">
+                    <span class="form-check-label">₹15,000 to ₹30,000</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="priceRange" value="3000000-6000000">
+                    <span class="form-check-label">₹30,000 to ₹60,000</span>
+                  </label>
+                  <label class="form-check">
+                    <input type="radio" name="priceRange" value="6000000-99999999">
+                    <span class="form-check-label">Above ₹60,000</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- In-Stock Only Toggle -->
+              <div class="filter-group">
+                <label class="form-check">
+                  <input type="checkbox" id="in-stock-checkbox">
+                  <span class="form-check-label" style="font-weight: 600;">In-Stock Ready to Ship Only</span>
+                </label>
+              </div>
+
+            </div>
+          </aside>
+
+          <!-- Product Grid Area -->
+          <div class="catalogue-main">
+            <div class="product-grid" id="catalogue-product-grid">
+              <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Empty Results Message -->
+            <div class="empty-results" id="catalogue-empty-state" style="display: none;">
+              <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+              <h3>No Heirlooms Found</h3>
+              <p>We could not find any ensembles matching your selected combination of filters. Try broadening your criteria or reset filters.</p>
+              <button type="button" class="btn btn--primary" id="empty-state-reset-btn">Reset All Filters</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/icons/logo.svg" alt="Vastraa" class="footer-brand-logo" width="160" height="40">
+          <p class="footer-desc">
+            Vastraa celebrates the timeless opulence of Indian handlooms, crafting heirloom sarees, bridal ensembles, and royal regalia with unwavering reverence for authenticity and artisans.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women's Couture</a></li>
+            <li><a href="shop.html?category=men">Men's Sherwanis & Kurtas</a></li>
+            <li><a href="shop.html?category=kids">Kids' Festive Regalia</a></li>
+            <li><a href="shop.html?occasion=Bridal%20%26%20Wedding">Bridal Troussier</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Your Order</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="shipping-policy.html">Shipping & Delivery</a></li>
+            <li><a href="returns-policy.html">Returns & Exchanges</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">The Vastraa Gazette</h4>
+          <p class="footer-desc">Subscribe to receive private invitations to new weave releases.</p>
+          <form class="footer-newsletter-form" id="footer-newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </div>
+            <div id="newsletter-status-msg" class="newsletter-privacy-note" role="status">We respect your privacy.</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Vastraa Heritage Couture. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping-policy.html">Shipping Terms</a>
+          <a href="returns-policy.html">Return Policy</a>
+          <a href="admin.html" style="color: #DFC48A; font-weight: 500;">Atelier Console (Admin)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { PRODUCTS } from "./js/modules/product-data.js";
+    import { filterProducts, sortProducts } from "./js/modules/filters.js";
+    import { createProductCardHTML } from "./js/main.js";
+    import { DialogController } from "./js/modules/accessibility.js";
+
+    // Filter State
+    const state = {
+      category: "all",
+      subcategory: "all",
+      occasion: "all",
+      size: "all",
+      minPricePaise: null,
+      maxPricePaise: null,
+      inStockOnly: false,
+      sortBy: "featured"
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      parseURLParameters();
+      initCategoryTabs();
+      initFilterControls();
+      initSortControl();
+      initMobileFilterDrawer();
+      applyFiltersAndRender();
+
+      window.addEventListener("vastraa:catalogue-updated", () => {
+        applyFiltersAndRender();
+      });
+      window.addEventListener("vastraa:stock-updated", () => {
+        applyFiltersAndRender();
+      });
+    });
+
+    function parseURLParameters() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("category")) {
+        state.category = params.get("category");
+      }
+      if (params.has("subcategory")) {
+        state.subcategory = params.get("subcategory");
+      }
+      if (params.has("occasion")) {
+        state.occasion = params.get("occasion");
+      }
+      updateCategoryUI();
+    }
+
+    function updateCategoryUI() {
+      // Update Tab Pills
+      document.querySelectorAll(".tab-pill").forEach(tab => {
+        const cat = tab.dataset.category;
+        const isActive = cat === state.category;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+      });
+
+      // Update Nav Link Active Class
+      document.querySelectorAll(".desktop-nav .nav-link").forEach(link => link.classList.remove("active"));
+      if (state.category === "women") document.getElementById("nav-link-women")?.classList.add("active");
+      else if (state.category === "men") document.getElementById("nav-link-men")?.classList.add("active");
+      else if (state.category === "kids") document.getElementById("nav-link-kids")?.classList.add("active");
+      else document.getElementById("nav-link-all")?.classList.add("active");
+
+      // Update Banner text and breadcrumb
+      const pageTitle = document.getElementById("collection-page-title");
+      const pageDesc = document.getElementById("collection-page-desc");
+      const breadcrumb = document.getElementById("breadcrumb-current");
+
+      if (state.category === "women") {
+        if (pageTitle) pageTitle.textContent = "Women's Royal Couture";
+        if (pageDesc) pageDesc.textContent = "Master handloom Kanjivaram silks, Banarasi brocades, and zardozi bridal lehengas.";
+        if (breadcrumb) breadcrumb.textContent = "Women's Couture";
+      } else if (state.category === "men") {
+        if (pageTitle) pageTitle.textContent = "Men's Imperial Attire";
+        if (pageDesc) pageDesc.textContent = "Raw silk sherwanis, tussar kurta churidars, and Jamdani woven bandi jackets.";
+        if (breadcrumb) breadcrumb.textContent = "Men's Attire";
+      } else if (state.category === "kids") {
+        if (pageTitle) pageTitle.textContent = "Vastraa Junior Festive";
+        if (pageDesc) pageDesc.textContent = "Celebratory lehenga sets, dhoti kurtas, and pure silk festive ensembles designed with pure cotton lining.";
+        if (breadcrumb) breadcrumb.textContent = "Kids' Festive";
+      } else {
+        if (pageTitle) pageTitle.textContent = "Curated Ensembles";
+        if (pageDesc) pageDesc.textContent = "Explore heirloom handloom weaves, master zardozi embroideries, and regal ceremonial attire across Women, Men, and Kids.";
+        if (breadcrumb) breadcrumb.textContent = "All Collections";
+      }
+    }
+
+    function initCategoryTabs() {
+      document.querySelectorAll(".tab-pill").forEach(tab => {
+        tab.addEventListener("click", () => {
+          state.category = tab.dataset.category;
+          updateCategoryUI();
+          applyFiltersAndRender();
+        });
+      });
+    }
+
+    function initFilterControls() {
+      // Subcategory Radio
+      document.querySelectorAll("input[name='subcategory']").forEach(radio => {
+        radio.addEventListener("change", (e) => {
+          state.subcategory = e.target.value;
+          applyFiltersAndRender();
+        });
+      });
+
+      // Occasion Radio
+      document.querySelectorAll("input[name='occasion']").forEach(radio => {
+        radio.addEventListener("change", (e) => {
+          state.occasion = e.target.value;
+          applyFiltersAndRender();
+        });
+      });
+
+      // Size Buttons
+      document.querySelectorAll(".size-filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".size-filter-btn").forEach(b => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          state.size = btn.dataset.size;
+          applyFiltersAndRender();
+        });
+      });
+
+      // Price Range Radio
+      document.querySelectorAll("input[name='priceRange']").forEach(radio => {
+        radio.addEventListener("change", (e) => {
+          const val = e.target.value;
+          if (val === "all") {
+            state.minPricePaise = null;
+            state.maxPricePaise = null;
+          } else {
+            const [min, max] = val.split("-").map(Number);
+            state.minPricePaise = min;
+            state.maxPricePaise = max;
+          }
+          applyFiltersAndRender();
+        });
+      });
+
+      // In-stock checkbox
+      const inStockCheck = document.getElementById("in-stock-checkbox");
+      inStockCheck?.addEventListener("change", (e) => {
+        state.inStockOnly = e.target.checked;
+        applyFiltersAndRender();
+      });
+
+      // Clear all buttons
+      document.getElementById("clear-all-filters-btn")?.addEventListener("click", resetAllFilters);
+      document.getElementById("empty-state-reset-btn")?.addEventListener("click", resetAllFilters);
+    }
+
+    function initSortControl() {
+      const select = document.getElementById("sort-select");
+      select?.addEventListener("change", (e) => {
+        state.sortBy = e.target.value;
+        applyFiltersAndRender();
+      });
+    }
+
+    function resetAllFilters() {
+      state.category = "all";
+      state.subcategory = "all";
+      state.occasion = "all";
+      state.size = "all";
+      state.minPricePaise = null;
+      state.maxPricePaise = null;
+      state.inStockOnly = false;
+
+      // Reset DOM controls
+      document.querySelectorAll("input[name='subcategory'][value='all']").forEach(r => r.checked = true);
+      document.querySelectorAll("input[name='occasion'][value='all']").forEach(r => r.checked = true);
+      document.querySelectorAll("input[name='priceRange'][value='all']").forEach(r => r.checked = true);
+      document.querySelectorAll(".size-filter-btn").forEach(b => b.classList.remove("is-active"));
+      document.querySelector(".size-filter-btn[data-size='all']")?.classList.add("is-active");
+      const inStock = document.getElementById("in-stock-checkbox");
+      if (inStock) inStock.checked = false;
+
+      updateCategoryUI();
+      applyFiltersAndRender();
+    }
+
+    function applyFiltersAndRender() {
+      const filtered = filterProducts(PRODUCTS, state);
+      const sorted = sortProducts(filtered, state.sortBy);
+
+      const grid = document.getElementById("catalogue-product-grid");
+      const emptyState = document.getElementById("catalogue-empty-state");
+      const counter = document.getElementById("product-count-display");
+
+      if (sorted.length === 0) {
+        if (grid) grid.innerHTML = "";
+        if (emptyState) emptyState.style.display = "block";
+        if (counter) counter.textContent = "0 ensembles found";
+      } else {
+        if (emptyState) emptyState.style.display = "none";
+        if (grid) grid.innerHTML = sorted.map(createProductCardHTML).join("");
+        if (counter) counter.textContent = `Showing ${sorted.length} ensemble${sorted.length > 1 ? 's' : ''}`;
+      }
+
+      renderActivePills();
+    }
+
+    function renderActivePills() {
+      const bar = document.getElementById("active-filters-bar");
+      const list = document.getElementById("active-pills-list");
+      const filterCountPill = document.getElementById("filter-active-count");
+      if (!bar || !list) return;
+
+      const activePills = [];
+
+      if (state.category !== "all") {
+        activePills.push({ label: `Category: ${state.category}`, clear: () => { state.category = "all"; updateCategoryUI(); applyFiltersAndRender(); } });
+      }
+      if (state.subcategory !== "all") {
+        activePills.push({ label: `Type: ${state.subcategory.replace('-', ' ')}`, clear: () => {
+          state.subcategory = "all";
+          document.querySelector("input[name='subcategory'][value='all']").checked = true;
+          applyFiltersAndRender();
+        }});
+      }
+      if (state.occasion !== "all") {
+        activePills.push({ label: `Occasion: ${state.occasion}`, clear: () => {
+          state.occasion = "all";
+          document.querySelector("input[name='occasion'][value='all']").checked = true;
+          applyFiltersAndRender();
+        }});
+      }
+      if (state.size !== "all") {
+        activePills.push({ label: `Size: ${state.size}`, clear: () => {
+          state.size = "all";
+          document.querySelectorAll(".size-filter-btn").forEach(b => b.classList.remove("is-active"));
+          document.querySelector(".size-filter-btn[data-size='all']")?.classList.add("is-active");
+          applyFiltersAndRender();
+        }});
+      }
+      if (state.minPricePaise !== null || state.maxPricePaise !== null) {
+        activePills.push({ label: `Price Filter`, clear: () => {
+          state.minPricePaise = null;
+          state.maxPricePaise = null;
+          document.querySelector("input[name='priceRange'][value='all']").checked = true;
+          applyFiltersAndRender();
+        }});
+      }
+      if (state.inStockOnly) {
+        activePills.push({ label: `In Stock Only`, clear: () => {
+          state.inStockOnly = false;
+          const chk = document.getElementById("in-stock-checkbox");
+          if (chk) chk.checked = false;
+          applyFiltersAndRender();
+        }});
+      }
+
+      if (filterCountPill) {
+        filterCountPill.textContent = String(activePills.length);
+      }
+
+      if (activePills.length === 0) {
+        bar.style.display = "none";
+        list.innerHTML = "";
+        return;
+      }
+
+      bar.style.display = "flex";
+      list.innerHTML = activePills.map((p, idx) => `
+        <button type="button" class="filter-pill" data-pill-idx="${idx}">
+          ${p.label} <span class="pill-remove" aria-hidden="true">&times;</span>
+        </button>
+      `).join("");
+
+      list.querySelectorAll(".filter-pill").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const idx = Number(btn.dataset.pillIdx);
+          activePills[idx].clear();
+        });
+      });
+    }
+
+    function initMobileFilterDrawer() {
+      const drawer = document.getElementById("mobile-filter-drawer");
+      const backdrop = document.getElementById("mobile-filter-backdrop");
+      const openBtn = document.getElementById("open-filter-drawer-btn");
+      const closeBtn = drawer?.querySelector(".filter-drawer-close");
+      const applyBtn = document.getElementById("mobile-filter-apply");
+      const resetBtn = document.getElementById("mobile-filter-reset");
+
+      if (!drawer || !backdrop) return;
+
+      const controller = new DialogController(drawer, {
+        onOpen: () => {
+          backdrop.classList.add("is-open");
+          // Populate mobile filter body by cloning desktop options if empty
+          const body = document.getElementById("mobile-filter-body");
+          const desktopForm = document.getElementById("desktop-filter-form");
+          if (body && body.children.length === 0 && desktopForm) {
+            body.innerHTML = desktopForm.innerHTML;
+            // Wire listeners inside mobile drawer
+            body.querySelectorAll("input[type='radio'], input[type='checkbox']").forEach(input => {
+              input.addEventListener("change", () => {
+                const target = document.querySelector(`#desktop-filter-form input[name='${input.name}'][value='${input.value}']`) ||
+                               document.querySelector(`#desktop-filter-form #${input.id}`);
+                if (target) {
+                  target.checked = input.checked;
+                  target.dispatchEvent(new Event("change"));
+                }
+              });
+            });
+            body.querySelectorAll(".size-filter-btn").forEach(btn => {
+              btn.addEventListener("click", () => {
+                const target = document.querySelector(`#desktop-filter-form .size-filter-btn[data-size='${btn.dataset.size}']`);
+                target?.click();
+              });
+            });
+          }
+        },
+        onClose: () => {
+          backdrop.classList.remove("is-open");
+        }
+      });
+
+      openBtn?.addEventListener("click", () => controller.open(openBtn));
+      closeBtn?.addEventListener("click", () => controller.close());
+      backdrop.addEventListener("click", () => controller.close());
+      applyBtn?.addEventListener("click", () => controller.close());
+      resetBtn?.addEventListener("click", () => {
+        resetAllFilters();
+        controller.close();
+      });
+    }
+  </script>
+</body>
+</html>

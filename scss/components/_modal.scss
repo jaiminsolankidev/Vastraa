@@ -1,0 +1,123 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — MODAL DIALOGS
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.modal-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-md;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-base, visibility $transition-base;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    .modal-content {
+      transform: scale(1);
+    }
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(41, 37, 33, 0.65);
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    background-color: $color-ivory;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+    box-shadow: $shadow-lg;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.96);
+    transition: transform $transition-base;
+    z-index: 2;
+
+    &--lg {
+      max-width: 820px;
+    }
+  }
+
+  .modal-header {
+    @include flex-between;
+    padding: $space-lg $space-xl;
+    border-bottom: 1px solid $color-border;
+    background-color: $color-white;
+
+    .modal-title {
+      font-family: $font-serif;
+      font-size: 1.5rem;
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+    }
+
+    .modal-close-btn {
+      @include button-reset;
+      @include flex-center;
+      width: 36px;
+      height: 36px;
+      border-radius: $radius-full;
+      color: $color-charcoal;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: $space-xl;
+    overflow-y: auto;
+
+    // Size Guide Table Styling
+    .size-table {
+      width: 100%;
+      margin-top: $space-md;
+      font-size: 0.875rem;
+
+      th {
+        background-color: $color-burgundy;
+        color: $color-white;
+        padding: $space-sm;
+        text-align: left;
+        font-family: $font-serif;
+        font-size: 1rem;
+        letter-spacing: 0.05em;
+      }
+
+      td {
+        padding: $space-sm;
+        border-bottom: 1px solid $color-border;
+        color: $color-charcoal;
+      }
+
+      tr:nth-child(even) td {
+        background-color: rgba($color-sand, 0.4);
+      }
+    }
+  }
+
+  .modal-footer {
+    padding: $space-md $space-xl;
+    border-top: 1px solid $color-border;
+    background-color: $color-white;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

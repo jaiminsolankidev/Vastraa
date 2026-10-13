@@ -1,0 +1,157 @@
+/**
+ * Vastraa Premium Indian Ethnic Wear — Responsive Architecture
+ * Breakpoints, fluid layouts, mobile navigation drawer, and touch-optimized controls
+ */
+
+/* =========================================================================
+   TABLETS & LAPTOPS (<= 1024px)
+   ========================================================================= */
+@media (max-width: 1024px) {
+  :root {
+    --container-gutter: 1.5rem;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .editorial-split,
+  .editorial-split--reversed {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .commerce-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.75rem 1.25rem;
+  }
+
+  /* Admin Studio Grid */
+  .studio-split-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================================
+   MOBILE & TABLET (<= 768px)
+   ========================================================================= */
+@media (max-width: 768px) {
+  :root {
+    --container-gutter: 1.25rem;
+  }
+
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Product details layout */
+  .pdp-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Header adjustments */
+  .header-layout {
+    height: 68px;
+  }
+
+  .nav-desktop {
+    display: none !important;
+  }
+
+  .nav-mobile-toggle {
+    display: inline-flex !important;
+  }
+
+  /* Footer stack */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Admin Table Horizontal Scroll */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-header__content {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
+  }
+
+  .admin-header__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* =========================================================================
+   SMALL MOBILE PHONES (<= 480px)
+   ========================================================================= */
+@media (max-width: 480px) {
+  :root {
+    --container-gutter: 1rem;
+  }
+
+  .section {
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+  }
+
+  .hero__title {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .cart-item {
+    grid-template-columns: 80px 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .cart-item__actions {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.75rem;
+  }
+
+  /* Modal Dialog Fullscreen on Small Mobile */
+  dialog.modal-dialog,
+  dialog.admin-dialog {
+    width: 96% !important;
+    max-height: 94vh !important;
+  }
+}
+
+/* =========================================================================
+   ACCESSIBILITY: REDUCED MOTION PREFERENCE
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

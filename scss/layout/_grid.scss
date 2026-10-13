@@ -1,0 +1,134 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — CSS GRID LAYOUTS
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Product Grid Layouts
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-md;
+
+  @include respond-to("tablet") {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-lg;
+  }
+
+  @include respond-to("desktop") {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-xl;
+  }
+
+  &--3-col {
+    @include respond-to("desktop") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--featured {
+    @include respond-to("desktop") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Category Cards Grid (Women, Men, Kids)
+.category-entry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to("tablet") {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-xl;
+  }
+}
+
+// Asymmetric Editorial Craftsmanship Section
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+  align-items: center;
+
+  @include respond-to("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-3xl;
+  }
+
+  &--reverse {
+    @include respond-to("tablet") {
+      direction: rtl;
+
+      > * {
+        direction: ltr;
+      }
+    }
+  }
+}
+
+// Trust Badges Grid
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to("mobile-lg") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-xl;
+  }
+}
+
+// Shop Page Layout (Sidebar Filter + Product Grid)
+.shop-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: 280px 1fr;
+    gap: $space-2xl;
+  }
+}
+
+// Product Details Page 2-Column Grid
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: 1.15fr 1fr;
+    gap: $space-3xl;
+  }
+}
+
+// Checkout 2-Column Grid
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: 1.35fr 1fr;
+    gap: $space-3xl;
+  }
+}
+
+// Cart Page Layout
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: 1.6fr 1fr;
+    gap: $space-3xl;
+  }
+}

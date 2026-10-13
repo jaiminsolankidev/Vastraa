@@ -1,0 +1,29 @@
+{
+  "name": "vastraa-premium-ethnic-wear",
+  "version": "1.0.0",
+  "description": "Vastraa - Premium Indian Ethnic Wear Brand Frontend",
+  "main": "js/main.js",
+  "type": "module",
+  "scripts": {
+    "build:css": "sass scss/main.scss css/main.css --no-source-map --style=compressed",
+    "watch:css": "sass scss/main.scss css/main.css --watch",
+    "dev": "node scripts/serve.js",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "node tests/browser-verification.js",
+    "build": "npm run build:css"
+  },
+  "keywords": [
+    "vastraa",
+    "ethnic-wear",
+    "ecommerce",
+    "scss",
+    "vanilla-js",
+    "accessibility",
+    "responsive-design"
+  ],
+  "author": "Vastraa Engineering Team",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.85.0"
+  }
+}

@@ -1,0 +1,258 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — FORMS & CONTROLS
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $space-lg;
+
+  &--row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--3-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.form-label {
+  font-size: 0.8125rem; // 13px
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-charcoal;
+  margin-bottom: $space-xs;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .required-mark {
+    color: $color-error;
+    margin-left: 2px;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.9375rem;
+  font-family: $font-sans;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  color: $color-charcoal;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &::placeholder {
+    color: rgba($color-charcoal-muted, 0.7);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-burgundy;
+    box-shadow: 0 0 0 3px $color-burgundy-soft;
+  }
+
+  &.is-invalid {
+    border-color: $color-error;
+    background-color: $color-error-bg;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(158, 31, 45, 0.2);
+    }
+  }
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23292521' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+// Accessible Error Message Text
+.form-error-msg {
+  font-size: 0.75rem;
+  color: $color-error;
+  margin-top: $space-2xs;
+  display: block;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: $color-charcoal-muted;
+  margin-top: $space-2xs;
+  display: block;
+}
+
+// Checkbox and Radio styling
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-xs;
+  margin-bottom: $space-sm;
+  cursor: pointer;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    margin-top: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: all $transition-fast;
+
+    &:checked {
+      background-color: $color-burgundy;
+      border-color: $color-burgundy;
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 6px;
+        border-left: 2px solid $color-white;
+        border-bottom: 2px solid $color-white;
+        transform: rotate(-45deg) translate(1px, -1px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-burgundy;
+      outline-offset: 2px;
+    }
+  }
+
+  input[type="radio"] {
+    border-radius: $radius-full;
+
+    &:checked::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $color-white;
+      border-radius: $radius-full;
+      border: none;
+      transform: none;
+    }
+  }
+
+  .form-check-label {
+    font-size: 0.875rem;
+    color: $color-charcoal;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+}
+
+// =============================================================================
+// GLOBAL UNIVERSAL QUANTITY STEPPER COMPONENT
+// =============================================================================
+.quantity-stepper {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  border: 1px solid $color-border !important;
+  border-radius: $radius-sm !important;
+  background-color: $color-white !important;
+  height: 36px !important;
+  width: 108px !important;
+  min-width: 108px !important;
+  max-width: 108px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+
+  .qty-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 100% !important;
+    min-width: 32px !important;
+    max-width: 32px !important;
+    border: none !important;
+    background-color: $color-sand-light !important;
+    color: $color-charcoal !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    transition: background-color $transition-fast, color $transition-fast !important;
+    user-select: none !important;
+
+    &:hover {
+      background-color: $color-gold !important;
+      color: $color-white !important;
+    }
+
+    &:active {
+      background-color: $color-gold-dark !important;
+    }
+  }
+
+  .qty-input {
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    height: 100% !important;
+    border: none !important;
+    border-left: 1px solid $color-border !important;
+    border-right: 1px solid $color-border !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    color: $color-charcoal !important;
+    background-color: $color-white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    -moz-appearance: textfield !important;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0 !important;
+    }
+
+    &:focus {
+      outline: none !important;
+      background-color: #FFFDF9 !important;
+    }
+  }
+}
+

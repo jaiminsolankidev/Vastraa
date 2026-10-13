@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — Vastraa Luxury Indian Ethnic Wear</title>
+  <meta name="description" content="Handcrafted Indian ethnic wear. Detailed fabric specifications, size guides, and bespoke couture drapes.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Store Announcement">
+    <span>Complimentary Express Delivery on orders above ₹2,999 • Code: <strong>VASTRAA10</strong> for 10% discount</span>
+    <a href="shop.html" class="announcement-bar__link">Shop Now</a>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-brand" aria-label="Vastraa Home">
+        <img src="assets/images/icons/logo.svg" alt="Vastraa Luxury Ethnic Wear" class="brand-logo" width="180" height="45">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="shop.html" class="nav-link">All Collections</a>
+        <a href="about.html" class="nav-link">Our Heritage</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="contact.html" class="nav-link">Atelier</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="action-btn" data-action="open-search" aria-label="Search catalogue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <a href="wishlist.html" class="action-btn" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count" data-type="wishlist" aria-hidden="true"></span>
+        </a>
+        <button type="button" class="action-btn" data-action="open-cart" aria-label="Open Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count" data-type="cart" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="action-btn mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <img src="assets/images/icons/logo.svg" alt="Vastraa" class="drawer-logo" width="140" height="35">
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="mobile-nav-list">
+        <a href="shop.html?category=women" class="mobile-nav-link">Women's Couture</a>
+        <a href="shop.html?category=men" class="mobile-nav-link">Men's Attire</a>
+        <a href="shop.html?category=kids" class="mobile-nav-link">Kids' Festive</a>
+        <a href="shop.html" class="mobile-nav-link">All Collections</a>
+        <a href="wishlist.html" class="mobile-nav-link">Saved Wishlist</a>
+        <a href="track-order.html" class="mobile-nav-link">Track Your Order</a>
+        <a href="about.html" class="mobile-nav-link">Our Heritage</a>
+          <a href="services.html" class="mobile-nav-link">Services</a>
+        <a href="contact.html" class="mobile-nav-link">Customer Atelier</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Product Search" aria-hidden="true">
+    <div class="search-container">
+      <form role="search">
+        <div class="search-input-wrapper">
+          <label for="search-input" class="sr-only">Search products</label>
+          <input type="search" id="search-input" name="q" placeholder="Search sarees, lehengas, sherwanis...">
+          <button type="submit" class="search-submit-btn" aria-label="Submit Search">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+          <button type="button" class="search-close-btn" aria-label="Close search">&times;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h3>Your Shopping Bag</h3>
+      <button type="button" class="close-btn" aria-label="Close Shopping Bag">&times;</button>
+    </div>
+    <div class="cart-drawer__shipping-meter"></div>
+    <div class="cart-drawer__body"></div>
+    <div class="cart-drawer__footer"></div>
+  </aside>
+
+  <!-- Size Guide Modal Dialog -->
+  <div class="modal-dialog" id="size-guide-modal" role="dialog" aria-modal="true" aria-labelledby="size-modal-title" aria-hidden="true">
+    <div class="modal-dialog__backdrop" data-close-modal></div>
+    <div class="modal-content modal-content--lg">
+      <div class="modal-header">
+        <h3 id="size-modal-title" class="modal-title">Atelier Size Guide & Measurements</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Close size guide">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9375rem; color: #5A544F; line-height: 1.6;">
+          All Vastraa ensembles are tailored with generous 2-inch side seam allowances for effortless local bespoke alteration. Measurements below are body measurements in inches.
+        </p>
+
+        <h4 style="margin-top: 1.5rem; font-size: 1.25rem; color: #641E2B;">Standard Sizing Chart (Inches)</h4>
+        <div style="overflow-x: auto;">
+          <table class="size-table" aria-label="Size Chart">
+            <thead>
+              <tr>
+                <th>Size</th>
+                <th>Bust / Chest</th>
+                <th>Waist</th>
+                <th>Hip</th>
+                <th>Standard Length</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>XS (34)</strong></td>
+                <td>32" – 34"</td>
+                <td>26" – 28"</td>
+                <td>36" – 38"</td>
+                <td>42" – 44"</td>
+              </tr>
+              <tr>
+                <td><strong>S (36)</strong></td>
+                <td>34" – 36"</td>
+                <td>28" – 30"</td>
+                <td>38" – 40"</td>
+                <td>42" – 44"</td>
+              </tr>
+              <tr>
+                <td><strong>M (38)</strong></td>
+                <td>36" – 38"</td>
+                <td>30" – 32"</td>
+                <td>40" – 42"</td>
+                <td>44" – 46"</td>
+              </tr>
+              <tr>
+                <td><strong>L (40)</strong></td>
+                <td>38" – 40"</td>
+                <td>32" – 34"</td>
+                <td>42" – 44"</td>
+                <td>44" – 46"</td>
+              </tr>
+              <tr>
+                <td><strong>XL (42)</strong></td>
+                <td>40" – 42"</td>
+                <td>34" – 36"</td>
+                <td>44" – 46"</td>
+                <td>45" – 47"</td>
+              </tr>
+              <tr>
+                <td><strong>XXL (44)</strong></td>
+                <td>42" – 44"</td>
+                <td>36" – 38"</td>
+                <td>46" – 48"</td>
+                <td>45" – 47"</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size: 0.8125rem; color: #736B63; margin-top: 1rem;">
+          * For sarees, blouson fabric is supplied unstitched (approx. 0.8 to 1.0 meter) to allow tailored custom styling.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn--primary btn--sm" data-close-modal>Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main id="main-content">
+    
+    <div class="container product-detail-section">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <a href="shop.html" id="breadcrumb-category-link">Shop</a>
+        <span class="crumb-sep" aria-hidden="true">/</span>
+        <span class="current-crumb" id="breadcrumb-product-name">Product Name</span>
+      </nav>
+
+      <!-- 2-Column Product Layout -->
+      <div class="product-detail-grid" id="product-container">
+        
+        <!-- Interactive Gallery Column -->
+        <div class="product-gallery">
+          <div class="product-gallery__thumbs" id="gallery-thumbs-list" role="tablist" aria-label="Product Image Views">
+            <!-- Thumbs generated by JS -->
+          </div>
+          <div class="product-gallery__main">
+            <img 
+              id="gallery-main-img" 
+              src="assets/images/products/fallback-women.svg" 
+              alt="Handcrafted ensemble main view" 
+              width="800" 
+              height="1000"
+            />
+          </div>
+        </div>
+
+        <!-- Product Information & Purchase Actions -->
+        <div class="product-info">
+          <span class="product-info__eyebrow" id="product-category-eyebrow">Women's Couture</span>
+          <h1 class="product-info__title" id="product-title">Ensemble Name</h1>
+
+          <div class="product-info__pricing">
+            <span class="price-current" id="product-price">₹0</span>
+            <span class="price-compare" id="product-compare-price" style="display: none;">₹0</span>
+            <span class="price-tag" id="product-discount-tag" style="display: none;">0% OFF</span>
+          </div>
+          <div class="product-info__tax-note">Inclusive of all taxes. Free insured express courier in India.</div>
+
+          <!-- Stock Badge -->
+          <div class="product-info__stock product-info__stock--in" id="product-stock-badge">
+            In Stock — Handcrafted and ready to dispatch
+          </div>
+
+          <!-- Color Option Selector -->
+          <div class="option-section" id="color-section">
+            <div class="option-header">
+              <span class="option-label">Color: <span id="selected-color-label">Selected Color</span></span>
+            </div>
+            <div class="color-swatch-group" id="color-swatches-container">
+              <!-- Swatches generated by JS -->
+            </div>
+          </div>
+
+          <!-- Size Option Selector -->
+          <div class="option-section" id="size-section">
+            <div class="option-header">
+              <span class="option-label">Select Size: <span id="selected-size-label" style="color: #641E2B; font-weight: 600;">(Required)</span></span>
+              <button type="button" class="size-guide-trigger" id="open-size-guide-btn">View Size Guide</button>
+            </div>
+            <div class="size-selector-group" id="size-selector-container">
+              <!-- Sizes generated by JS -->
+            </div>
+            <span class="form-error-msg" id="size-required-error" style="display: none;">Please select an ensemble size to proceed.</span>
+          </div>
+
+          <!-- Quantity Stepper -->
+          <div class="option-section">
+            <div class="option-header">
+              <span class="option-label">Quantity:</span>
+            </div>
+            <div class="quantity-stepper">
+              <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+              <input type="number" class="qty-input" id="qty-input" value="1" min="1" max="10" readonly aria-label="Selected quantity">
+              <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="product-actions-row">
+            <button type="button" class="btn btn--primary btn--lg add-to-bag-btn" id="add-to-bag-btn">
+              Add to Shopping Bag
+            </button>
+            <button type="button" class="btn-icon wishlist-toggle-btn" id="pdp-wishlist-btn" aria-label="Save to Wishlist">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Specs & Care Accordion -->
+          <div class="product-accordion">
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__trigger" data-accordion-trigger aria-expanded="true" aria-controls="panel-desc">
+                <span>Description & Drape</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+              </button>
+              <div class="accordion-item__panel is-open" id="panel-desc">
+                <p id="product-description-text"></p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__trigger" data-accordion-trigger aria-expanded="false" aria-controls="panel-material">
+                <span>Fabric, Weave & Specifications</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+              </button>
+              <div class="accordion-item__panel" id="panel-material" hidden>
+                <p><strong>Primary Material:</strong> <span id="product-material-text"></span></p>
+                <p><strong>Craft Heritage:</strong> Generational handloom master weaving with certified zari borders.</p>
+                <p><strong>Occasion:</strong> <span id="product-occasion-text"></span></p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__trigger" data-accordion-trigger aria-expanded="false" aria-controls="panel-care">
+                <span>Care & Preservation</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+              </button>
+              <div class="accordion-item__panel" id="panel-care" hidden>
+                <p id="product-care-text"></p>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <button type="button" class="accordion-item__trigger" data-accordion-trigger aria-expanded="false" aria-controls="panel-shipping">
+                <span>Complimentary Delivery & 7-Day Returns</span>
+                <span class="accordion-icon" aria-hidden="true">▼</span>
+              </button>
+              <div class="accordion-item__panel" id="panel-shipping" hidden>
+                <p>Enjoy complimentary insured express delivery across India. Handcrafted ensembles are dispatched within 24 to 48 hours.</p>
+                <p>Hassle-free 7-day handcrafted exchange or return window for unstitched outfits with tags intact.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Related Heirloom Pieces Section -->
+    <section class="related-products-section" aria-labelledby="related-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">COMPLEMENTARY ENSEMBLES</span>
+          <h2 id="related-heading" class="section-title">You May Also Admire</h2>
+          <div class="gold-divider" aria-hidden="true"></div>
+        </div>
+        <div class="product-grid" id="related-products-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/icons/logo.svg" alt="Vastraa" class="footer-brand-logo" width="160" height="40">
+          <p class="footer-desc">
+            Vastraa celebrates the timeless opulence of Indian handlooms, crafting heirloom sarees, bridal ensembles, and royal regalia with unwavering reverence for authenticity and artisans.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women's Couture</a></li>
+            <li><a href="shop.html?category=men">Men's Sherwanis & Kurtas</a></li>
+            <li><a href="shop.html?category=kids">Kids' Festive Regalia</a></li>
+            <li><a href="shop.html?occasion=Bridal%20%26%20Wedding">Bridal Troussier</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Your Order</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="shipping-policy.html">Shipping & Delivery</a></li>
+            <li><a href="returns-policy.html">Returns & Exchanges</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">The Vastraa Gazette</h4>
+          <p class="footer-desc">Subscribe to receive private invitations to new weave releases.</p>
+          <form class="footer-newsletter-form" id="footer-newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </div>
+            <div id="newsletter-status-msg" class="newsletter-privacy-note" role="status">We respect your privacy.</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Vastraa Heritage Couture. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping-policy.html">Shipping Terms</a>
+          <a href="returns-policy.html">Return Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { PRODUCTS, getProductBySlug, formatPrice, calculateDiscount, getRelatedProducts } from "./js/modules/product-data.js";
+    import { cart } from "./js/modules/cart.js";
+    import { wishlist } from "./js/modules/wishlist.js";
+    import { createProductCardHTML } from "./js/main.js";
+    import { DialogController } from "./js/modules/accessibility.js";
+    import { toast } from "./js/modules/toast.js";
+
+    let currentProduct = null;
+    let selectedSize = null;
+    let selectedColor = null;
+    let selectedQuantity = 1;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadProduct();
+      initSizeGuideModal();
+      initQuantityControls();
+      initAddToBag();
+
+      window.addEventListener("vastraa:stock-updated", (e) => {
+        if (e.detail?.productId === currentProduct?.id) {
+          loadProduct();
+        }
+      });
+      window.addEventListener("vastraa:catalogue-updated", () => {
+        loadProduct();
+      });
+    });
+
+    function loadProduct() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("slug");
+
+      currentProduct = getProductBySlug(slug) || PRODUCTS[0];
+
+      // Update Page Meta
+      document.title = `${currentProduct.name} — Vastraa Heritage Couture`;
+
+      // Update Breadcrumbs
+      const catLink = document.getElementById("breadcrumb-category-link");
+      if (catLink) {
+        catLink.href = `shop.html?category=${currentProduct.category}`;
+        catLink.textContent = currentProduct.category.charAt(0).toUpperCase() + currentProduct.category.slice(1);
+      }
+      const prodCrumb = document.getElementById("breadcrumb-product-name");
+      if (prodCrumb) prodCrumb.textContent = currentProduct.name;
+
+      // Update Info
+      document.getElementById("product-category-eyebrow").textContent = `${currentProduct.category} • ${currentProduct.subcategory.replace('-', ' ')}`;
+      document.getElementById("product-title").textContent = currentProduct.name;
+      document.getElementById("product-price").textContent = formatPrice(currentProduct.pricePaise);
+
+      const discount = calculateDiscount(currentProduct.pricePaise, currentProduct.compareAtPricePaise);
+      if (discount > 0) {
+        const compareElem = document.getElementById("product-compare-price");
+        const discountTag = document.getElementById("product-discount-tag");
+        compareElem.textContent = formatPrice(currentProduct.compareAtPricePaise);
+        compareElem.style.display = "inline";
+        discountTag.textContent = `${discount}% OFF`;
+        discountTag.style.display = "inline-block";
+      }
+
+      // Stock
+      const stockBadge = document.getElementById("product-stock-badge");
+      const addBtn = document.getElementById("add-to-bag-btn");
+      const qtyMinus = document.getElementById("qty-minus");
+      const qtyPlus = document.getElementById("qty-plus");
+      const qtyInput = document.getElementById("qty-input");
+      const qty = typeof currentProduct.stockQuantity === "number" ? currentProduct.stockQuantity : 5;
+
+      if (qty <= 0 || currentProduct.availability === "out_of_stock") {
+        stockBadge.className = "product-info__stock product-info__stock--out";
+        stockBadge.style.color = "#C62828";
+        stockBadge.textContent = "Sold Out — Currently in Artisanal Weaving";
+        if (addBtn) {
+          addBtn.disabled = true;
+          addBtn.setAttribute("aria-disabled", "true");
+          addBtn.textContent = "Sold Out";
+          addBtn.style.opacity = "0.55";
+          addBtn.style.cursor = "not-allowed";
+        }
+        if (qtyMinus) qtyMinus.disabled = true;
+        if (qtyPlus) qtyPlus.disabled = true;
+        if (qtyInput) {
+          qtyInput.value = "0";
+          qtyInput.disabled = true;
+        }
+      } else if (qty <= 3) {
+        stockBadge.className = "product-info__stock product-info__stock--low";
+        stockBadge.style.color = "#9C681E";
+        stockBadge.textContent = `Only ${qty} piece${qty === 1 ? '' : 's'} left in atelier reserve`;
+        if (addBtn) {
+          addBtn.disabled = false;
+          addBtn.removeAttribute("aria-disabled");
+          addBtn.textContent = "Add to Shopping Bag";
+          addBtn.style.opacity = "1";
+          addBtn.style.cursor = "pointer";
+        }
+        if (qtyMinus) qtyMinus.disabled = false;
+        if (qtyPlus) qtyPlus.disabled = false;
+        if (qtyInput) {
+          qtyInput.value = String(selectedQuantity || 1);
+          qtyInput.disabled = false;
+        }
+      } else {
+        stockBadge.className = "product-info__stock product-info__stock--in";
+        stockBadge.style.color = "#235F3D";
+        stockBadge.textContent = "In Stock — Ready for expedited dispatch";
+        if (addBtn) {
+          addBtn.disabled = false;
+          addBtn.removeAttribute("aria-disabled");
+          addBtn.textContent = "Add to Shopping Bag";
+          addBtn.style.opacity = "1";
+          addBtn.style.cursor = "pointer";
+        }
+        if (qtyMinus) qtyMinus.disabled = false;
+        if (qtyPlus) qtyPlus.disabled = false;
+        if (qtyInput) {
+          qtyInput.value = String(selectedQuantity || 1);
+          qtyInput.disabled = false;
+        }
+      }
+
+      // Accordion Specs
+      document.getElementById("product-description-text").textContent = currentProduct.description;
+      document.getElementById("product-material-text").textContent = currentProduct.material;
+      document.getElementById("product-occasion-text").textContent = currentProduct.occasion;
+      document.getElementById("product-care-text").textContent = currentProduct.careInstructions;
+
+      // Gallery Images
+      renderGallery();
+
+      // Color Swatches
+      renderColors();
+
+      // Size Choices
+      renderSizes();
+
+      // Wishlist PDP Button State
+      updatePDPWishlistButton();
+
+      // Related Products
+      renderRelated();
+    }
+
+    function renderGallery() {
+      const thumbsList = document.getElementById("gallery-thumbs-list");
+      const mainImg = document.getElementById("gallery-main-img");
+      const images = currentProduct.gallery && currentProduct.gallery.length > 0
+        ? currentProduct.gallery
+        : [currentProduct.image];
+
+      mainImg.src = images[0];
+      mainImg.alt = `${currentProduct.name} - Front View`;
+
+      thumbsList.innerHTML = images.map((imgUrl, idx) => `
+        <button 
+          type="button" 
+          class="thumb-btn ${idx === 0 ? 'is-active' : ''}" 
+          data-img="${imgUrl}"
+          aria-label="View ensemble angle ${idx + 1}"
+          aria-selected="${idx === 0 ? 'true' : 'false'}"
+        >
+          <img src="${imgUrl}" alt="${currentProduct.name} angle ${idx + 1}" loading="lazy" onerror="this.src='${currentProduct.fallbackImage}'">
+        </button>
+      `).join("");
+
+      thumbsList.querySelectorAll(".thumb-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          thumbsList.querySelectorAll(".thumb-btn").forEach(b => {
+            b.classList.remove("is-active");
+            b.setAttribute("aria-selected", "false");
+          });
+          btn.classList.add("is-active");
+          btn.setAttribute("aria-selected", "true");
+          mainImg.src = btn.dataset.img;
+        });
+      });
+    }
+
+    function renderColors() {
+      const container = document.getElementById("color-swatches-container");
+      const label = document.getElementById("selected-color-label");
+      const colors = currentProduct.availableColors || [{ name: "Standard", hex: "#641E2B" }];
+
+      selectedColor = colors[0].name;
+      label.textContent = selectedColor;
+
+      container.innerHTML = colors.map((col, idx) => `
+        <button 
+          type="button" 
+          class="color-swatch-btn ${idx === 0 ? 'is-selected' : ''}" 
+          style="background-color: ${col.hex};" 
+          data-color="${col.name}"
+          title="${col.name}"
+          aria-label="${col.name}"
+        ></button>
+      `).join("");
+
+      container.querySelectorAll(".color-swatch-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          container.querySelectorAll(".color-swatch-btn").forEach(b => b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+          selectedColor = btn.dataset.color;
+          label.textContent = selectedColor;
+        });
+      });
+    }
+
+    function renderSizes() {
+      const container = document.getElementById("size-selector-container");
+      const sizes = currentProduct.availableSizes || ["Free Size"];
+
+      // If only one size available (e.g. Free Size), select it by default
+      if (sizes.length === 1) {
+        selectedSize = sizes[0];
+        document.getElementById("selected-size-label").textContent = `Selected: ${selectedSize}`;
+      } else {
+        selectedSize = null;
+        document.getElementById("selected-size-label").textContent = "(Please choose)";
+      }
+
+      container.innerHTML = sizes.map(sz => `
+        <button 
+          type="button" 
+          class="size-choice-btn ${sz === selectedSize ? 'is-selected' : ''}" 
+          data-size="${sz}"
+        >
+          ${sz}
+        </button>
+      `).join("");
+
+      container.querySelectorAll(".size-choice-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          container.querySelectorAll(".size-choice-btn").forEach(b => b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+          selectedSize = btn.dataset.size;
+          document.getElementById("selected-size-label").textContent = `Selected: ${selectedSize}`;
+          document.getElementById("size-required-error").style.display = "none";
+        });
+      });
+    }
+
+    function initQuantityControls() {
+      const minus = document.getElementById("qty-minus");
+      const plus = document.getElementById("qty-plus");
+      const input = document.getElementById("qty-input");
+
+      minus?.addEventListener("click", () => {
+        if (selectedQuantity > 1) {
+          selectedQuantity--;
+          input.value = selectedQuantity;
+        }
+      });
+
+      plus?.addEventListener("click", () => {
+        const max = currentProduct.stockQuantity || 10;
+        if (selectedQuantity < max) {
+          selectedQuantity++;
+          input.value = selectedQuantity;
+        } else {
+          toast.show(`Maximum atelier stock available is ${max}.`, "error");
+        }
+      });
+    }
+
+    function initAddToBag() {
+      const addBtn = document.getElementById("add-to-bag-btn");
+      const errorMsg = document.getElementById("size-required-error");
+
+      addBtn?.addEventListener("click", () => {
+        if (!selectedSize) {
+          errorMsg.style.display = "block";
+          toast.show("Please select an ensemble size to proceed.", "error");
+          return;
+        }
+        errorMsg.style.display = "none";
+
+        const success = cart.addItem(
+          currentProduct.id,
+          selectedSize,
+          selectedColor,
+          selectedQuantity
+        );
+
+        if (success) {
+          // Open cart drawer to display confirmation
+          const openCartBtn = document.querySelector("[data-action='open-cart']");
+          openCartBtn?.click();
+        }
+      });
+    }
+
+    function updatePDPWishlistButton() {
+      const btn = document.getElementById("pdp-wishlist-btn");
+      if (!btn || !currentProduct) return;
+
+      const isSaved = wishlist.has(currentProduct.id);
+      btn.classList.toggle("is-active", isSaved);
+      btn.setAttribute("aria-pressed", String(isSaved));
+
+      btn.onclick = () => {
+        const state = wishlist.toggle(currentProduct.id);
+        btn.classList.toggle("is-active", state);
+        btn.setAttribute("aria-pressed", String(state));
+      };
+    }
+
+    function renderRelated() {
+      const grid = document.getElementById("related-products-grid");
+      if (!grid || !currentProduct) return;
+
+      const related = getRelatedProducts(currentProduct, 4);
+      grid.innerHTML = related.map(createProductCardHTML).join("");
+    }
+
+    function initSizeGuideModal() {
+      const modal = document.getElementById("size-guide-modal");
+      const openBtn = document.getElementById("open-size-guide-btn");
+      if (!modal || !openBtn) return;
+
+      const controller = new DialogController(modal);
+      openBtn.addEventListener("click", () => controller.open(openBtn));
+      modal.querySelectorAll("[data-close-modal]").forEach(btn => {
+        btn.addEventListener("click", () => controller.close());
+      });
+    }
+  </script>
+</body>
+</html>

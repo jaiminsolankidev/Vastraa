@@ -1,0 +1,216 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — MOBILE NAVIGATION & SEARCH OVERLAY
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Mobile Nav Drawer Backdrop
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(41, 37, 33, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: $z-drawer-backdrop;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $transition-base, visibility $transition-base;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Mobile Nav Drawer
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 360px;
+  background-color: $color-ivory;
+  z-index: $z-drawer;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform $transition-slow, visibility $transition-slow;
+  box-shadow: $shadow-drawer;
+  display: flex;
+  flex-direction: column;
+
+  &.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .drawer-header {
+    @include flex-between;
+    padding: $space-lg $space-md;
+    border-bottom: 1px solid $color-border;
+
+    .drawer-logo {
+      height: 32px;
+      width: auto;
+    }
+
+    .drawer-close-btn {
+      @include button-reset;
+      @include flex-center;
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+      color: $color-charcoal;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+    }
+  }
+
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: $space-lg $space-md;
+
+    .mobile-nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: $space-xs;
+
+      .mobile-nav-link {
+        display: block;
+        padding: $space-sm $space-xs;
+        font-family: $font-serif;
+        font-size: 1.35rem;
+        font-weight: $font-weight-semibold;
+        color: $color-charcoal;
+        border-bottom: 1px solid rgba($color-border, 0.4);
+        transition: color $transition-fast, padding-left $transition-fast;
+
+        &:hover,
+        &.active {
+          color: $color-burgundy;
+          padding-left: $space-xs;
+        }
+      }
+    }
+  }
+
+  .drawer-footer {
+    padding: $space-lg $space-md;
+    border-top: 1px solid $color-border;
+    background-color: $color-sand-light;
+
+    .drawer-support-text {
+      font-size: 0.8125rem;
+      color: $color-charcoal-muted;
+      margin-bottom: $space-xs;
+    }
+
+    .drawer-phone {
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+      display: block;
+    }
+  }
+}
+
+// Search Overlay Bar
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-ivory;
+  z-index: $z-modal;
+  padding: $space-xl $space-md;
+  box-shadow: $shadow-lg;
+  border-bottom: 2px solid $color-gold;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform $transition-base, opacity $transition-base, visibility $transition-base;
+
+  &.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      input {
+        width: 100%;
+        padding: $space-md $space-3xl $space-md $space-lg;
+        font-family: $font-serif;
+        font-size: 1.5rem;
+        background-color: $color-white;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        color: $color-charcoal;
+
+        &:focus {
+          outline: none;
+          border-color: $color-burgundy;
+          box-shadow: 0 0 0 3px $color-burgundy-soft;
+        }
+      }
+
+      .search-submit-btn {
+        @include button-reset;
+        position: absolute;
+        right: 48px;
+        color: $color-burgundy;
+        padding: $space-xs;
+      }
+
+      .search-close-btn {
+        @include button-reset;
+        position: absolute;
+        right: 12px;
+        color: $color-charcoal-muted;
+        padding: $space-xs;
+
+        &:hover {
+          color: $color-charcoal;
+        }
+      }
+    }
+
+    .search-suggestions {
+      margin-top: $space-md;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: $space-xs;
+
+      .suggestion-label {
+        font-size: 0.8125rem;
+        color: $color-charcoal-muted;
+      }
+
+      .suggestion-chip {
+        @include button-reset;
+        font-size: 0.8125rem;
+        padding: $space-2xs $space-sm;
+        background-color: $color-sand;
+        border-radius: $radius-full;
+        color: $color-burgundy;
+
+        &:hover {
+          background-color: $color-burgundy;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vastraa — Complete Business Website Project Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --burgundy: #641E2B;
+      --burgundy-dark: #45121B;
+      --gold: #C5A15B;
+      --ivory: #F8F3EB;
+      --charcoal: #292521;
+      --sand: #E9DFD1;
+      --border: #E4D8C7;
+      --success: #1E6B37;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Inter", -apple-system, sans-serif;
+      line-height: 1.65;
+      color: var(--charcoal);
+      background-color: var(--ivory);
+      padding: 2rem 1rem;
+    }
+    .doc-container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 3.5rem 4rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(41, 37, 33, 0.08);
+      border: 1px solid var(--border);
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .doc-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .page-break { page-break-before: always; }
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--burgundy);
+      color: #fff;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.85rem;
+      color: var(--burgundy);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1.15rem;
+      color: #6B635B;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 1.5rem;
+    }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.85rem;
+      color: var(--burgundy);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-size: 1.2rem;
+      color: var(--burgundy-dark);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h4 {
+      font-size: 1rem;
+      color: var(--charcoal);
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    p, li {
+      font-size: 0.975rem;
+      color: #3D3731;
+      margin-bottom: 0.75rem;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    li { margin-bottom: 0.35rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      text-align: left;
+    }
+    th {
+      background: var(--burgundy);
+      color: #fff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td {
+      background: #FDFBF8;
+    }
+    code, pre {
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
+    pre {
+      background: #24201D;
+      color: #F8F3EB;
+      padding: 1.25rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      margin: 1rem 0;
+      line-height: 1.5;
+    }
+    code {
+      background: rgba(197, 161, 91, 0.15);
+      color: var(--burgundy);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.875em;
+    }
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+    .callout {
+      background: #FDF9F2;
+      border-left: 4px solid var(--gold);
+      padding: 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1.25rem 0;
+    }
+    .callout--success {
+      background: #F0F9F2;
+      border-left-color: var(--success);
+    }
+    .print-btn {
+      float: right;
+      background: var(--gold);
+      color: var(--charcoal);
+      border: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .print-btn:hover { background: #DFC48A; }
+    .checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+    .checklist li {
+      padding-left: 1.8rem;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-container">
+    <button class="print-btn no-print" onclick="window.print()">Print / Save as PDF</button>
+    <span class="header-badge">Month 1: Frontend Foundations Mastery — Final Project</span>
+    <h1>My Business Website Project</h1>
+    <div class="subtitle">Complete Technical Project Documentation & Verification Package • Brand: <strong>Vastraa (Luxury Indian Ethnic Wear)</strong></div>
+
+    <h2>About This Project</h2>
+    <p>This is a complete, production-ready business website built for <strong>Vastraa — Luxury Indian Ethnic Wear</strong>, an artisanal heritage fashion label celebrating millenary Indian textile weaving clusters. The website incorporates <strong>18 fully integrated pages</strong> engineered with semantic HTML5, CSS Grid, Flexbox, Dart Sass (SCSS 7-1 pattern), and framework-free Vanilla JavaScript.</p>
+    
+    <h3>Key Features Included:</h3>
+    <ul>
+      <li><strong>Multi-Page Architecture:</strong> Homepage (<code>index.html</code>), Heritage (<code>about.html</code>), Bespoke Services (<code>services.html</code>), Concierge (<code>contact.html</code>), Collections (<code>shop.html</code>), Product Detail (<code>product.html</code>), Bag (<code>cart.html</code>), Checkout (<code>checkout.html</code>), and Admin Suite (<code>admin.html</code>).</li>
+      <li><strong>Interactive E-Commerce State Engine:</strong> Integer-paise currency math (preventing JavaScript float errors), dynamic quantity steppers, live privilege vouchers (<code>VASTRAA10</code>), and free delivery thresholds.</li>
+      <li><strong>Accessible Form Validation:</strong> Modular engine (<code>js/form-validation.js</code>) validating emails, 10-digit Indian mobile numbers with <code>+91</code> prefix, and 6-digit Indian PIN postal codes.</li>
+      <li><strong>Atelier Executive Suite:</strong> Real-time inventory editing, stock level auto-saving, order fulfillment slips, and printable GST tax invoices without browser thread locking.</li>
+      <li><strong>5-Stage Order Tracking:</strong> Realistic simulated courier tracker verifying milestone progress for patron orders.</li>
+    </ul>
+
+    <h2>What I Learned</h2>
+    <ul>
+      <li><strong>HTML5 Structure:</strong> Mastered the use of semantic landmark tags (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;dialog&gt;</code>), establishing a clean accessibility tree with ARIA landmarks and structured JSON-LD microdata.</li>
+      <li><strong>CSS Layouts (Grid & Flexbox):</strong> Mastered 2D CSS Grid for macro-layouts (product matrices, editorial splits, responsive card galleries) and 1D Flexbox for micro-alignments (navigation bars, action clusters, badges, quantity steppers).</li>
+      <li><strong>SASS/SCSS Organization:</strong> Adopted the modular 7-1 SASS architecture to manage variables, color tokens (Imperial Burgundy, Warm Ivory, Zari Gold), typography scales, and responsive mixins.</li>
+      <li><strong>Modern JavaScript:</strong> Developed interactive features using modern native ES modules (<code>import</code>/<code>export</code>), focus-trapped dialogs, touch-friendly mobile drawers, and smooth-scrolling navigation.</li>
+      <li><strong>Accessibility (A11y):</strong> Built with WCAG 2.2 AA compliance from day one, including alt text on all imagery, high color contrast (&gt;4.5:1), visible focus rings, and skip-to-content links.</li>
+      <li><strong>Cross-Browser Testing:</strong> Verified flawless rendering with zero horizontal overflow across Chrome, Firefox, Edge, and Safari at 1440px desktop, 1024px tablet, and 375px mobile viewports.</li>
+    </ul>
+
+    <h2>Challenges & Solutions</h2>
+    
+    <h3>Challenge 1: Making Complex 2D Layouts Responsive Without Layout Shifts</h3>
+    <p><strong>Solution:</strong> Designed dedicated layout subsystems (<code>css/layout.css</code> and <code>css/responsive.css</code>) using CSS Grid <code>repeat(auto-fill, minmax(280px, 1fr))</code> on desktop, collapsing smoothly to 2 columns on tablet and 1 column on mobile via mobile-first media queries and <code>overflow-x: hidden</code> safeguards.</p>
+
+    <h3>Challenge 2: Dynamic Stock & Quantity State Synchronization Without Frameworks</h3>
+    <p><strong>Solution:</strong> Engineered an event-driven state architecture using integer paise (1 INR = 100 paise) to eliminate JavaScript floating-point rounding errors across vouchers and line items, persisting to <code>localStorage</code> with corrupted-data fallback boundaries.</p>
+
+    <h3>Challenge 3: Accessible, Multi-Field Form Validation with Real-Time Feedback</h3>
+    <p><strong>Solution:</strong> Built a modular, standalone form validation engine (<code>js/form-validation.js</code>) that attaches to forms, validating required inputs, emails, Indian phone numbers (<code>/^[6-9]\d{9}$/</code>), and PIN codes (<code>/^[1-9][0-9]{5}$/</code>) with ARIA live region error announcements.</p>
+
+    <h3>Challenge 4: Preventing Browser Freezing in Admin Slip/Invoice Modal</h3>
+    <p><strong>Solution:</strong> Refactored the invoice generation to use native <code>&lt;dialog&gt;</code> controllers, decoupling DOM rendering from print triggers and providing accessible close handlers that properly restore focus.</p>
+
+    <h2>How to View This Website</h2>
+    <ol>
+      <li><strong>Direct Browser Launch:</strong> Open <code>index.html</code> directly in any web browser (Chrome, Edge, Firefox, Safari). All styles, images, and fonts render cleanly standalone.</li>
+      <li><strong>Local Development Server:</strong>
+        <pre><code># 1. Open terminal in the vastraa directory
+# 2. Start the local server
+node scripts/serve.js
+# 3. Open browser at http://localhost:3000</code></pre>
+      </li>
+      <li><strong>Running Automated Tests:</strong>
+        <pre><code>npm test                         # Runs 24 unit test suites
+node tests/exhaustive-full-site-audit.js # Runs 35 Chrome CDP live audit checks</code></pre>
+      </li>
+    </ol>
+
+    <h2>Submission File Tree</h2>
+    <pre><code>business-website/ (vastraa/)
+│── index.html                               # Homepage
+│── about.html                               # About page (Our Heritage)
+│── services.html                            # Services page (Bespoke Atelier)
+│── contact.html                             # Contact page (Concierge & Locator)
+│── css/                                     # Production Stylesheets
+│   ├── main.css                             # Main compiled styles
+│   ├── layout.css                           # Grid & Flexbox structural layouts
+│   └── responsive.css                       # Responsive media query breakpoints
+│── scss/                                    # SASS Source Architecture (7-1 pattern)
+│   ├── abstracts/                           # Variables, mixins, functions
+│   ├── base/                                # Reset, typography, accessibility
+│   ├── components/                          # Buttons, cards, modals, steppers, toasts
+│   ├── layout/                              # Header, navigation, footer, grid
+│   ├── pages/                               # Page stylesheets
+│   └── main.scss                            # SCSS compilation entry point
+│── js/                                      # JavaScript Client Modules
+│   ├── main.js                              # Main client orchestration
+│   ├── form-validation.js                   # Accessible form handling engine
+│   └── modules/                             # Specialized business logic modules
+│── images/                                  # Image Asset Management
+│   ├── optimized/                           # Web-ready optimized SVGs & fallbacks
+│   └── original/                            # High-resolution original vectors
+│── shop.html                                # Master catalogue & categories (Women, Men, Kids)
+│── product.html                             # Product detail page with size selector
+│── cart.html                                # Shopping bag with integer-paise math
+│── checkout.html                            # Two-step checkout preview
+│── order-confirmation.html                  # Order receipt with simulated status
+│── track-order.html                         # Courier status lookup & 5-stage timeline
+│── wishlist.html                            # Saved ensembles gallery
+│── search.html                              # Dedicated search results
+│── admin.html                               # Atelier Executive Suite & Inventory Manager
+│── faq.html                                 # Frequently Asked Questions
+│── shipping-policy.html                     # Shipping terms & conditions
+│── returns-policy.html                      # 7-day exchange & return policy
+│── privacy-policy.html                      # Customer privacy practices
+│── terms.html                               # Commercial terms & craftsmanship
+│── 404.html                                 # Luxury 404 error page
+│── README.md                                # Instructor-aligned project documentation
+│── PROJECT_DOCUMENTATION.html               # Printable self-contained report
+└── .gitignore                               # Git ignore configuration</code></pre>
+
+    <h2>Visual Documentation & Screenshots</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Screen</th>
+          <th>Description</th>
+          <th>File Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Desktop Homepage</strong></td>
+          <td>Hero editorial, category gateways, craftsmanship narrative, trust pillars.</td>
+          <td><code>screenshots/homepage-desktop.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Mobile Experience</strong></td>
+          <td>Mobile slide-out drawer, sticky header, touch-friendly product cards.</td>
+          <td><code>screenshots/homepage-mobile.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Bespoke Services</strong></td>
+          <td>Bridal trousseau, made-to-measure tailoring, appointment booking form.</td>
+          <td><code>screenshots/services-page.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Our Heritage</strong></td>
+          <td>Brand story and 5 weaving clusters (Varanasi, Kanchipuram, Patan).</td>
+          <td><code>screenshots/about-page.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Atelier Contact</strong></td>
+          <td>Flagship store address, concierge hours, interactive inquiry form.</td>
+          <td><code>screenshots/contact-page.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Shop Catalogue</strong></td>
+          <td>Multi-faceted filters (category, price, fabric), sort controls, active chips.</td>
+          <td><code>screenshots/shop-catalogue.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Product Detail</strong></td>
+          <td>Multi-angle gallery, accessible size selector, interactive Size Guide.</td>
+          <td><code>screenshots/product-detail.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Shopping Bag</strong></td>
+          <td>Line-item calculations, promo voucher input (<code>VASTRAA10</code>), quantity steppers.</td>
+          <td><code>screenshots/cart-page.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Checkout Preview</strong></td>
+          <td>Two-step address and delivery preview with Indian PIN code verification.</td>
+          <td><code>screenshots/checkout-preview.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Order Tracking</strong></td>
+          <td>5-stage milestone courier timeline tracking simulated orders.</td>
+          <td><code>screenshots/order-tracking.png</code></td>
+        </tr>
+        <tr>
+          <td><strong>Atelier Admin Suite</strong></td>
+          <td>Executive dashboard with inline stock editing and tax invoice generation.</td>
+          <td><code>screenshots/admin-suite.png</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Testing Strategy & Verification Evidence</h2>
+    <div class="callout callout--success">
+      <p><strong>100% Test Pass Rate Across All Suites:</strong></p>
+      <ul>
+        <li><strong>Automated Unit Tests (<code>npm test</code>):</strong> 24 of 24 passed (100%). Covers cart math, free shipping threshold, privilege promo code, catalogue filtering, catalogue sorting, product management overrides, storage fallbacks, and validation rules.</li>
+        <li><strong>Automated Chrome CDP Audit (<code>exhaustive-full-site-audit.js</code>):</strong> 35 of 35 passed (100%). Covers 21 static routes with zero layout overflow on desktop and mobile, plus add-to-bag, quantity stepper increment, coupon application, item removal, checkout validation, demo order placement, invoice modal launch, inline stock auto-save, and sold-out reflection.</li>
+      </ul>
+    </div>
+
+    <h2>Technical Details (Algorithms, Data Structures & Architecture)</h2>
+    <p>The application implements several specialized algorithms and data structures to ensure precision, responsiveness, and resilience:</p>
+    <ul>
+      <li><strong>Integer-Paise Monetary Math:</strong> Currency calculations are handled exclusively in integer paise (1 INR = 100 paise) rather than floating-point decimals, completely preventing JavaScript binary rounding errors across voucher discounts and GST tax calculations.</li>
+      <li><strong>Validation Regular Expressions:</strong> Standardized validation algorithms for email syntax, 10-digit Indian mobile numbers (<code>/^[6-9]\d{9}$/</code> with optional <code>+91</code> prefix), and 6-digit Indian postal PIN codes (<code>/^[1-9][0-9]{5}$/</code>) encapsulated in <code>js/form-validation.js</code>.</li>
+      <li><strong>LocalStorage Schema & Error Boundary:</strong> Normalized key-value data structures with defensive try/catch error boundaries that gracefully catch corrupted data or quota exhaustion without crashing the application.</li>
+      <li><strong>Modular Dart Sass 7-1 Architecture:</strong> Separation of design tokens (variables), mixins, reset rules, UI components, and page layouts, compiling to clean, minified production CSS.</li>
+    </ul>
+
+    <h2>Component Architecture & Data Flow Diagram</h2>
+    <p>The application follows a predictable, unidirectional event-driven architecture:</p>
+    <div class="callout">
+      <pre><code>[User Interaction] (Click "Add to Bag", Filter, or Step Quantity)
+       │
+       ▼
+[DOM Event Listener] (Vanilla JS Module: cart.js, filters.js)
+       │
+       ▼
+[Validation & Calculation] (Integer-paise math, stock boundary check)
+       │
+       ▼
+[State Mutation & Persistence] (LocalStorage with JSON schema error boundary)
+       │
+       ▼
+[Dispatched CustomEvent] ("vastraa:cart-updated", "vastraa:stock-changed")
+       │
+       ▼
+[UI Subscribers Update] (Badge counters, slide-out drawer, ARIA live region)</code></pre>
+    </div>
+
+  </div>
+</body>
+</html>

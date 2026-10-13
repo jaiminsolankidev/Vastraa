@@ -1,0 +1,363 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — PRODUCT DETAIL ELEMENTS
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Interactive Gallery
+.product-gallery {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $space-md;
+
+  @include respond-to("tablet") {
+    flex-direction: row;
+    gap: $space-lg;
+  }
+
+  // Thumbnails Strip
+  &__thumbs {
+    display: flex;
+    gap: $space-xs;
+    overflow-x: auto;
+
+    @include respond-to("tablet") {
+      flex-direction: column;
+      width: 88px;
+      flex-shrink: 0;
+      overflow-y: auto;
+      max-height: 560px;
+    }
+
+    .thumb-btn {
+      @include button-reset;
+      width: 72px;
+      aspect-ratio: 4 / 5;
+      border: 2px solid transparent;
+      border-radius: $radius-sm;
+      overflow: hidden;
+      flex-shrink: 0;
+      transition: border-color $transition-fast;
+
+      @include respond-to("tablet") {
+        width: 100%;
+      }
+
+      &.is-active,
+      &:hover {
+        border-color: $color-burgundy;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  // Main Image Stage
+  &__main {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 4 / 5;
+    background-color: $color-sand-light;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    border: 1px solid $color-border;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform $transition-base;
+    }
+  }
+}
+
+// Product Information Panel
+.product-info {
+  display: flex;
+  flex-direction: column;
+
+  &__eyebrow {
+    font-size: 0.8125rem;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: $space-xs;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 2.25rem;
+    font-weight: $font-weight-semibold;
+    color: $color-charcoal;
+    line-height: 1.15;
+    margin-bottom: $space-md;
+
+    @include respond-to("tablet") {
+      font-size: 2.75rem;
+    }
+  }
+
+  &__pricing {
+    display: flex;
+    align-items: baseline;
+    gap: $space-md;
+    margin-bottom: $space-lg;
+
+    .price-current {
+      font-size: 1.85rem;
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+    }
+
+    .price-compare {
+      font-size: 1.25rem;
+      color: $color-charcoal-muted;
+      text-decoration: line-through;
+    }
+
+    .price-tag {
+      background-color: $color-burgundy-soft;
+      color: $color-burgundy;
+      font-size: 0.75rem;
+      font-weight: $font-weight-bold;
+      padding: 0.2rem 0.5rem;
+      border-radius: $radius-sm;
+    }
+  }
+
+  &__tax-note {
+    font-size: 0.8125rem;
+    color: $color-charcoal-muted;
+    margin-top: -0.75rem;
+    margin-bottom: $space-lg;
+  }
+
+  // Stock Badge
+  &__stock {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: 0.875rem;
+    font-weight: $font-weight-medium;
+    margin-bottom: $space-lg;
+
+    &--in {
+      color: $color-success;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: $color-success;
+        border-radius: $radius-full;
+      }
+    }
+
+    &--low {
+      color: $color-warning;
+      &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: $color-warning;
+        border-radius: $radius-full;
+      }
+    }
+  }
+
+  // Swatches & Option Selectors
+  .option-section {
+    margin-bottom: $space-lg;
+
+    .option-header {
+      @include flex-between;
+      margin-bottom: $space-xs;
+
+      .option-label {
+        font-size: 0.8125rem;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: $color-charcoal;
+
+        span {
+          font-weight: $font-weight-regular;
+          color: $color-charcoal-muted;
+        }
+      }
+
+      .size-guide-trigger {
+        @include button-reset;
+        font-size: 0.8125rem;
+        color: $color-burgundy;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-burgundy-dark;
+        }
+      }
+    }
+
+    // Size Selection Buttons
+    .size-selector-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-xs;
+
+      .size-choice-btn {
+        @include button-reset;
+        min-width: 48px;
+        height: 44px;
+        padding: 0 $space-sm;
+        border: 1px solid $color-border;
+        background-color: $color-white;
+        border-radius: $radius-sm;
+        font-size: 0.875rem;
+        font-weight: $font-weight-medium;
+        transition: all $transition-fast;
+
+        &:hover {
+          border-color: $color-burgundy;
+        }
+
+        &.is-selected {
+          background-color: $color-burgundy;
+          border-color: $color-burgundy;
+          color: $color-white;
+        }
+      }
+    }
+
+    // Color Swatches
+    .color-swatch-group {
+      display: flex;
+      gap: $space-sm;
+
+      .color-swatch-btn {
+        @include button-reset;
+        width: 34px;
+        height: 34px;
+        border-radius: $radius-full;
+        border: 2px solid $color-white;
+        outline: 1px solid $color-border;
+        transition: outline $transition-fast, transform $transition-fast;
+
+        &:hover,
+        &.is-selected {
+          outline: 2px solid $color-burgundy;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  // Quantity Stepper
+  .quantity-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    height: 48px;
+
+    .qty-btn {
+      @include button-reset;
+      @include flex-center;
+      width: 44px;
+      height: 100%;
+      font-size: 1.25rem;
+      color: $color-charcoal;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+    }
+
+    .qty-input {
+      width: 48px;
+      height: 100%;
+      border: none;
+      text-align: center;
+      font-weight: $font-weight-semibold;
+      font-size: 1rem;
+      -moz-appearance: textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  // CTA Row
+  .product-actions-row {
+    display: flex;
+    gap: $space-md;
+    margin-top: $space-md;
+    margin-bottom: $space-2xl;
+
+    .add-to-bag-btn {
+      flex: 1;
+    }
+
+    .wishlist-toggle-btn {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      background-color: $color-white;
+
+      &.is-active svg {
+        fill: $color-burgundy;
+        color: $color-burgundy;
+      }
+    }
+  }
+
+  // Accordion Details Specs
+  .product-accordion {
+    border-top: 1px solid $color-border;
+
+    .accordion-item {
+      border-bottom: 1px solid $color-border;
+
+      &__trigger {
+        @include button-reset;
+        @include flex-between;
+        width: 100%;
+        padding: $space-lg 0;
+        font-family: $font-serif;
+        font-size: 1.25rem;
+        font-weight: $font-weight-semibold;
+        color: $color-charcoal;
+
+        .accordion-icon {
+          transition: transform $transition-base;
+        }
+
+        &[aria-expanded="true"] .accordion-icon {
+          transform: rotate(180deg);
+        }
+      }
+
+      &__panel {
+        padding-bottom: $space-lg;
+        color: $color-charcoal-light;
+        font-size: 0.9375rem;
+        line-height: 1.7;
+
+        &[hidden] {
+          display: none;
+        }
+      }
+    }
+  }
+}

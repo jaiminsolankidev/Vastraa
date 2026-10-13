@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Preview — Vastraa Luxury Indian Ethnic Wear</title>
+  <meta name="description" content="Review your delivery address, select shipping speed, and complete your demonstration order.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Store Announcement">
+    <span>Demo Checkout Simulation • No financial credentials will ever be processed</span>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-brand" aria-label="Vastraa Home">
+        <img src="assets/images/icons/logo.svg" alt="Vastraa Luxury Ethnic Wear" class="brand-logo" width="180" height="45">
+      </a>
+
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; color: #641E2B; font-weight: 600;">
+        Secure Atelier Checkout (Demo)
+      </div>
+
+      <div class="header-actions">
+        <a href="cart.html" class="action-btn" aria-label="Return to bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count" data-type="cart" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CHECKOUT CONTENT -->
+  <main id="main-content">
+    
+    <section class="checkout-section">
+      <div class="container">
+        
+        <!-- Prominent Demo Disclaimer -->
+        <div class="demo-disclaimer-banner" role="alert">
+          <div class="disclaimer-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="disclaimer-text">
+            <strong>Demonstration Checkout Only:</strong> This website is an engineering prototype. Do not enter real credit card numbers or banking secrets. Submitting this form creates a simulated demo order stored locally in your browser to verify order tracking and fulfilment workflows.
+          </div>
+        </div>
+
+        <div class="checkout-layout">
+          
+          <!-- Checkout Steps Form Column -->
+          <div class="checkout-forms-column">
+            <form id="checkout-form" novalidate>
+              
+              <!-- STEP 1: Delivery Address -->
+              <div class="checkout-step">
+                <div class="checkout-step__header">
+                  <span class="step-number">1</span>
+                  <h2 class="step-title">Customer & Delivery Address</h2>
+                </div>
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name <span class="required-mark">*</span></label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Ananya Sharma" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email Address <span class="required-mark">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="e.g. ananya@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group--row">
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number <span class="required-mark">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="10-digit Indian Mobile" required>
+                    <span class="form-hint">Used for SMS tracking notifications.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" id="country" name="country" class="form-control" value="India" readonly disabled style="background-color: #F8F3EB;">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="address" class="form-label">Street Address <span class="required-mark">*</span></label>
+                  <input type="text" id="address" name="address" class="form-control" placeholder="House/Flat number, building name, street" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="apartment" class="form-label">Apartment, Suite, Landmark (Optional)</label>
+                  <input type="text" id="apartment" name="apartment" class="form-control" placeholder="Landmark or locality">
+                </div>
+
+                <div class="form-group--3-col">
+                  <div class="form-group">
+                    <label for="city" class="form-label">City <span class="required-mark">*</span></label>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Bengaluru" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="state" class="form-label">State <span class="required-mark">*</span></label>
+                    <select id="state" name="state" class="form-control" required>
+                      <option value="">Select State</option>
+                      <option value="Karnataka" selected>Karnataka</option>
+                      <option value="Maharashtra">Maharashtra</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Tamil Nadu">Tamil Nadu</option>
+                      <option value="Uttar Pradesh">Uttar Pradesh</option>
+                      <option value="Rajasthan">Rajasthan</option>
+                      <option value="Gujarat">Gujarat</option>
+                      <option value="West Bengal">West Bengal</option>
+                      <option value="Telangana">Telangana</option>
+                      <option value="Kerala">Kerala</option>
+                      <option value="Punjab">Punjab</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="postalCode" class="form-label">PIN Code <span class="required-mark">*</span></label>
+                    <input type="text" id="postalCode" name="postalCode" class="form-control" placeholder="6-digit PIN" maxlength="6" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: Delivery Speed -->
+              <div class="checkout-step">
+                <div class="checkout-step__header">
+                  <span class="step-number">2</span>
+                  <h2 class="step-title">Shipping Speed & Handling</h2>
+                </div>
+
+                <div class="shipping-options-grid">
+                  <label class="shipping-method-card is-selected" id="shipping-method-std-label">
+                    <input type="radio" name="shippingMethod" value="standard" checked style="margin-top: 4px;">
+                    <div class="method-details">
+                      <span class="method-name">Standard Insured Courier</span>
+                      <span class="method-eta">Delivered in 3–5 Business Days</span>
+                      <span class="method-price" id="std-shipping-price-text">FREE</span>
+                    </div>
+                  </label>
+
+                  <label class="shipping-method-card" id="shipping-method-exp-label">
+                    <input type="radio" name="shippingMethod" value="expedited" style="margin-top: 4px;">
+                    <div class="method-details">
+                      <span class="method-name">VIP Expedited Courier</span>
+                      <span class="method-eta">Delivered in 1–2 Business Days</span>
+                      <span class="method-price">₹350</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 3: Payment Method (Simulation) -->
+              <div class="checkout-step">
+                <div class="checkout-step__header">
+                  <span class="step-number">3</span>
+                  <h2 class="step-title">Payment Method (Simulation Mode)</h2>
+                </div>
+
+                <div class="payment-options-list">
+                  <label class="payment-option-card is-selected">
+                    <input type="radio" name="paymentMethod" value="UPI (Demo)" checked style="margin-top: 4px;">
+                    <div class="payment-details">
+                      <div class="payment-title">Instant UPI / QR Code (Simulated)</div>
+                      <div class="payment-sub">Google Pay, PhonePe, Paytm, or BHIM UPI</div>
+                    </div>
+                  </label>
+
+                  <label class="payment-option-card">
+                    <input type="radio" name="paymentMethod" value="Credit/Debit Card (Demo)" style="margin-top: 4px;">
+                    <div class="payment-details">
+                      <div class="payment-title">Credit / Debit Card (Simulated)</div>
+                      <div class="payment-sub">Visa, MasterCard, RuPay, Amex</div>
+                    </div>
+                  </label>
+
+                  <label class="payment-option-card">
+                    <input type="radio" name="paymentMethod" value="Net Banking (Demo)" style="margin-top: 4px;">
+                    <div class="payment-details">
+                      <div class="payment-title">Net Banking (Simulated)</div>
+                      <div class="payment-sub">All major Indian nationalized and private banks</div>
+                    </div>
+                  </label>
+
+                  <label class="payment-option-card">
+                    <input type="radio" name="paymentMethod" value="Cash on Delivery (Demo)" style="margin-top: 4px;">
+                    <div class="payment-details">
+                      <div class="payment-title">Cash on Delivery (COD Demo)</div>
+                      <div class="payment-sub">Pay in cash or UPI upon courier arrival at doorstep</div>
+                    </div>
+                  </label>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                  <input type="checkbox" id="termsConsent" name="termsConsent" required style="margin-top: 4px;">
+                  <label for="termsConsent" style="font-size: 0.8125rem; color: #5A544F; line-height: 1.5;">
+                    I agree to the <a href="terms.html" target="_blank" style="text-decoration: underline; color: #641E2B;">Terms of Service</a> and understand this is a demonstration order with simulated tracking.
+                  </label>
+                </div>
+                <span class="form-error-msg" id="termsConsent-error"></span>
+
+                <div style="margin-top: 2rem;">
+                  <button type="submit" class="btn btn--primary btn--full btn--lg" id="submit-order-btn">
+                    Place Demonstration Order
+                  </button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Order Summary Sidebar -->
+          <aside class="cart-summary-box" style="align-self: start;">
+            <h3 class="summary-title">Order Review</h3>
+
+            <div id="checkout-items-preview" style="max-height: 280px; overflow-y: auto; margin-bottom: 1.5rem;">
+              <!-- Item list injected by JS -->
+            </div>
+
+            <div class="summary-line">
+              <span>Subtotal</span>
+              <span id="co-subtotal-val">₹0</span>
+            </div>
+
+            <div id="co-promo-line">
+              <!-- Promo row -->
+            </div>
+
+            <div class="summary-line">
+              <span>Shipping</span>
+              <span id="co-shipping-val">FREE</span>
+            </div>
+
+            <div class="summary-line" style="font-size: 0.8125rem; color: #736B63;">
+              <span>GST Component (Inclusive)</span>
+              <span id="co-gst-val">₹0</span>
+            </div>
+
+            <div class="summary-line summary-line--total">
+              <span>Grand Total</span>
+              <span class="price-total" id="co-total-val">₹0</span>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.8125rem; color: #5A544F;">
+              <p>🔒 256-bit TLS Encrypted Simulation</p>
+              <p style="margin-top: 0.25rem;">📦 Delivered in protective muslin garment trunk</p>
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top: 0; border-top: none;">
+        <p class="footer-copy">&copy; 2026 Vastraa Heritage Couture. Demonstration Prototype.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { cart } from "./js/modules/cart.js";
+    import { orderService } from "./js/modules/order.js";
+    import { getProductById, formatPrice } from "./js/modules/product-data.js";
+    import { validateForm } from "./js/modules/validation.js";
+    import { toast } from "./js/modules/toast.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // If cart is empty, show graceful empty state
+      if (cart.items.length === 0) {
+        const layout = document.querySelector(".checkout-layout");
+        if (layout) {
+          layout.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; background: #FFFFFF; border-radius: 6px; border: 1px solid #E4D8C7;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#641E2B" stroke-width="1.5" style="margin-bottom: 1rem;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #641E2B; margin-bottom: 0.75rem;">Your Shopping Bag is Currently Empty</h3>
+              <p style="color: #6B635B; margin-bottom: 2rem; max-width: 480px; margin-inline: auto;">Please choose an artisanal lehenga, saree, or sherwani to begin checkout.</p>
+              <a href="shop.html" class="btn btn--primary" style="display: inline-block;">Explore Collections</a>
+            </div>
+          `;
+        }
+        return;
+      }
+
+      renderCheckoutSummary();
+      initFormSubmission();
+    });
+
+    function renderCheckoutSummary() {
+      const itemsList = document.getElementById("checkout-items-preview");
+      const summary = cart.getSummary();
+
+      if (itemsList) {
+        itemsList.innerHTML = cart.items.map(item => {
+          const product = getProductById(item.productId);
+          const img = product ? product.image : "assets/images/products/fallback-women.svg";
+          const name = product ? product.name : "Handcrafted Ensemble";
+          const price = formatPrice((product ? product.pricePaise : item.pricePaise) * item.quantity);
+
+          return `
+            <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem; align-items: center; border-bottom: 1px solid #EFE7DC; padding-bottom: 0.5rem;">
+              <img src="${img}" alt="${name}" style="width: 50px; aspect-ratio: 4/5; object-fit: cover; border-radius: 3px;" onerror="this.src='assets/images/products/fallback-women.svg'">
+              <div style="flex: 1; font-size: 0.8125rem;">
+                <div style="font-weight: 600; color: #292521;">${name}</div>
+                <div style="color: #6B635B;">Size: ${item.size} • Qty: ${item.quantity}</div>
+              </div>
+              <div style="font-weight: 600; color: #641E2B; font-size: 0.875rem;">${price}</div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      document.getElementById("co-subtotal-val").textContent = summary.formattedSubtotal;
+      document.getElementById("co-shipping-val").textContent = summary.formattedShipping;
+      document.getElementById("co-gst-val").textContent = summary.formattedGst;
+      document.getElementById("co-total-val").textContent = summary.formattedTotal;
+
+      const promoLine = document.getElementById("co-promo-line");
+      if (summary.discountPaise > 0) {
+        promoLine.innerHTML = `
+          <div class="summary-line" style="color: var(--color-success, #235F3D);">
+            <span>Privilege Discount (${summary.promo?.code})</span>
+            <span>-${summary.formattedDiscount}</span>
+          </div>
+        `;
+      } else {
+        promoLine.innerHTML = "";
+      }
+    }
+
+    function initFormSubmission() {
+      const form = document.getElementById("checkout-form");
+      if (!form) return;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const schema = {
+          fullName: { required: true, minLength: 3, label: "Full Name" },
+          email: { required: true, email: true, label: "Email Address" },
+          phone: { required: true, phone: true, label: "Phone Number" },
+          address: { required: true, minLength: 5, label: "Street Address" },
+          city: { required: true, label: "City" },
+          state: { required: true, label: "State" },
+          postalCode: { required: true, pinCode: true, label: "PIN Code" }
+        };
+
+        const isValid = validateForm(form, schema);
+
+        const consent = document.getElementById("termsConsent");
+        const consentError = document.getElementById("termsConsent-error");
+        if (!consent.checked) {
+          consentError.textContent = "Please agree to the terms to proceed.";
+          return;
+        } else {
+          consentError.textContent = "";
+        }
+
+        if (!isValid) {
+          toast.show("Please correct the errors in the form.", "error");
+          return;
+        }
+
+        // Collect Form Values
+        const formData = {
+          fullName: form.fullName.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          address: form.address.value.trim(),
+          apartment: form.apartment.value.trim(),
+          city: form.city.value.trim(),
+          state: form.state.value,
+          postalCode: form.postalCode.value.trim(),
+          paymentMethod: form.paymentMethod.value
+        };
+
+        // Create Demo Order
+        const summary = cart.getSummary();
+        const createdOrder = orderService.createDemoOrder(formData, cart.items, summary);
+
+        // Clear Cart
+        cart.clear();
+
+        toast.show("Demo order created successfully!", "success");
+
+        // Redirect to Order Confirmation
+        setTimeout(() => {
+          window.location.href = `order-confirmation.html?orderId=${createdOrder.orderId}`;
+        }, 300);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — ACCESSIBILITY (WCAG 2.2 AA)
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Visually hidden helper (accessible to screen readers)
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// Skip to main content link
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: $space-md;
+  background-color: $color-burgundy;
+  color: $color-white;
+  padding: $space-sm $space-lg;
+  font-weight: $font-weight-semibold;
+  font-size: 0.9rem;
+  z-index: 9999;
+  border-radius: 0 0 $radius-sm $radius-sm;
+  transition: top $transition-fast;
+  box-shadow: $shadow-md;
+
+  &:focus {
+    top: 0;
+    outline: 3px solid $color-gold;
+    outline-offset: 2px;
+  }
+}
+
+// Global Accessible Focus Indicator
+:focus-visible {
+  outline: 2px solid $color-burgundy;
+  outline-offset: 2px;
+}
+
+// Reduced Motion Preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

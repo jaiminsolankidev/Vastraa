@@ -1,0 +1,112 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — SHOP & COLLECTION PAGE STYLES
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.page-banner {
+  background-color: $color-sand-light;
+  padding: $space-2xl 0;
+  border-bottom: 1px solid $color-border;
+  text-align: center;
+
+  .breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-xs;
+    font-size: 0.8125rem;
+    color: $color-charcoal-muted;
+    margin-bottom: $space-sm;
+
+    a:hover {
+      color: $color-burgundy;
+    }
+
+    .crumb-sep {
+      color: $color-gold;
+    }
+
+    .current-crumb {
+      color: $color-charcoal;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .banner-title {
+    font-size: 2.75rem;
+    margin-bottom: $space-xs;
+
+    @include respond-to("tablet") {
+      font-size: 3.5rem;
+    }
+  }
+
+  .banner-desc {
+    max-width: 620px;
+    margin: 0 auto;
+    color: $color-charcoal-light;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+// Category Tabs Bar
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: $space-xs;
+  margin-top: $space-lg;
+  flex-wrap: wrap;
+
+  .tab-pill {
+    @include button-reset;
+    padding: 0.5rem 1.25rem;
+    border-radius: $radius-full;
+    font-size: 0.8125rem;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    color: $color-charcoal;
+    transition: all $transition-fast;
+
+    &:hover,
+    &.is-active {
+      background-color: $color-burgundy;
+      border-color: $color-burgundy;
+      color: $color-white;
+    }
+  }
+}
+
+// Empty State Container
+.empty-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: $space-3xl $space-md;
+  background-color: $color-white;
+  border-radius: $radius-sm;
+  border: 1px solid $color-border-light;
+
+  .empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto $space-md;
+    color: $color-sand-dark;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    margin-bottom: $space-xs;
+  }
+
+  p {
+    color: $color-charcoal-muted;
+    max-width: 480px;
+    margin: 0 auto $space-lg;
+    font-size: 0.9375rem;
+  }
+}

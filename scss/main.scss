@@ -1,0 +1,39 @@
+// =============================================================================
+// VASTRAA LUXURY ETHNIC WEAR — MAIN SCSS ENTRY POINT
+// =============================================================================
+
+// 1. Abstracts (variables, mixins, functions)
+@use "abstracts/variables" as *;
+@use "abstracts/functions" as *;
+@use "abstracts/mixins" as *;
+
+// 2. Base Styles
+@use "base/reset";
+@use "base/typography";
+@use "base/global";
+@use "base/accessibility";
+
+// 3. Layout Primitives
+@use "layout/header";
+@use "layout/navigation";
+@use "layout/grid";
+@use "layout/footer";
+
+// 4. Reusable UI Components
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/modal";
+@use "components/filters";
+@use "components/product";
+@use "components/cart-drawer";
+@use "components/toast";
+
+// 5. Page-Specific Styles
+@use "pages/home";
+@use "pages/shop";
+@use "pages/product-detail";
+@use "pages/cart";
+@use "pages/checkout";
+@use "pages/info-pages";
+@use "pages/admin";

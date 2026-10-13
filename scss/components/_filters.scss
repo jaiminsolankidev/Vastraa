@@ -1,0 +1,228 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — FILTERS & SORTING
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Shop Toolbar (Filter toggle, results count, sorting)
+.shop-toolbar {
+  @include flex-between;
+  padding: $space-md 0;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: $space-xl;
+  gap: $space-md;
+  flex-wrap: wrap;
+
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+
+    .product-counter {
+      font-size: 0.875rem;
+      color: $color-charcoal-muted;
+      font-weight: $font-weight-medium;
+    }
+
+    .mobile-filter-btn {
+      display: inline-flex;
+
+      @include respond-to("desktop-sm") {
+        display: none;
+      }
+    }
+  }
+
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+
+    .sort-label {
+      font-size: 0.8125rem;
+      font-weight: $font-weight-semibold;
+      color: $color-charcoal;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sort-select {
+      padding: 0.5rem 2rem 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      background-color: $color-white;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      cursor: pointer;
+    }
+  }
+}
+
+// Active Filter Pills Row
+.active-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-xs;
+  margin-bottom: $space-xl;
+
+  .active-filter-label {
+    font-size: 0.8125rem;
+    color: $color-charcoal-muted;
+    margin-right: $space-2xs;
+  }
+
+  .filter-pill {
+    @include button-reset;
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2xs;
+    padding: 0.35rem 0.75rem;
+    background-color: $color-sand;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    font-size: 0.75rem;
+    font-weight: $font-weight-medium;
+    color: $color-charcoal;
+
+    &:hover {
+      background-color: $color-sand-dark;
+      color: $color-burgundy;
+    }
+
+    .pill-remove {
+      font-size: 1rem;
+      line-height: 1;
+    }
+  }
+
+  .clear-all-btn {
+    @include button-reset;
+    font-size: 0.8125rem;
+    font-weight: $font-weight-semibold;
+    color: $color-burgundy;
+    text-decoration: underline;
+    margin-left: $space-xs;
+
+    &:hover {
+      color: $color-burgundy-dark;
+    }
+  }
+}
+
+// Filter Sidebar / Desktop Facet Container
+.filter-sidebar {
+  display: none;
+
+  @include respond-to("desktop-sm") {
+    display: block;
+  }
+
+  .filter-group {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: $space-lg;
+    margin-bottom: $space-lg;
+
+    &__header {
+      font-family: $font-serif;
+      font-size: 1.25rem;
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+      margin-bottom: $space-md;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__options {
+      display: flex;
+      flex-direction: column;
+      gap: $space-xs;
+    }
+
+    // Size Pills Grid inside filter
+    &__sizes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-xs;
+
+      .size-filter-btn {
+        @include button-reset;
+        padding: 0.4rem 0.75rem;
+        border: 1px solid $color-border;
+        background-color: $color-white;
+        border-radius: $radius-sm;
+        font-size: 0.8125rem;
+        font-weight: $font-weight-medium;
+        min-width: 42px;
+        text-align: center;
+        transition: all $transition-fast;
+
+        &:hover,
+        &.is-active {
+          background-color: $color-burgundy;
+          border-color: $color-burgundy;
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+// Mobile Filter Off-Canvas Drawer
+.mobile-filter-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 380px;
+  background-color: $color-ivory;
+  z-index: $z-drawer;
+  transform: translateX(100%);
+  transition: transform $transition-slow;
+  box-shadow: $shadow-drawer;
+  display: flex;
+  flex-direction: column;
+
+  &.is-open {
+    transform: translateX(0);
+  }
+
+  .filter-drawer-header {
+    @include flex-between;
+    padding: $space-lg $space-md;
+    border-bottom: 1px solid $color-border;
+    background-color: $color-white;
+
+    h3 {
+      font-size: 1.35rem;
+    }
+
+    .filter-drawer-close {
+      @include button-reset;
+      @include flex-center;
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+    }
+  }
+
+  .filter-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: $space-lg $space-md;
+  }
+
+  .filter-drawer-footer {
+    padding: $space-md;
+    border-top: 1px solid $color-border;
+    background-color: $color-white;
+    display: flex;
+    gap: $space-sm;
+  }
+}

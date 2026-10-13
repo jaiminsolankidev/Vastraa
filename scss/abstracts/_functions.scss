@@ -1,0 +1,15 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — FUNCTIONS
+// =============================================================================
+
+@use "sass:math";
+
+// Convert pixels to rem
+@function rem($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
+// Convert paise to INR rupee representation
+@function paise-to-rupees($paise) {
+  @return math.div($paise, 100);
+}

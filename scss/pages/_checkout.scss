@@ -1,0 +1,240 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — CHECKOUT & ORDER CONFIRMATION
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.checkout-section {
+  padding-top: $space-2xl;
+  padding-bottom: $space-4xl;
+
+  // Demo Notice Banner
+  .demo-disclaimer-banner {
+    background-color: #FFF8E6;
+    border: 1px solid #E6CA65;
+    border-radius: $radius-sm;
+    padding: $space-md $space-lg;
+    margin-bottom: $space-2xl;
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+
+    .disclaimer-icon {
+      color: $color-warning;
+      flex-shrink: 0;
+    }
+
+    .disclaimer-text {
+      font-size: 0.875rem;
+      color: #664D03;
+      line-height: 1.5;
+
+      strong {
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
+  // Checkout Steps Container
+  .checkout-step {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: $space-xl;
+    margin-bottom: $space-xl;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+      margin-bottom: $space-lg;
+      padding-bottom: $space-sm;
+      border-bottom: 1px solid $color-border-light;
+
+      .step-number {
+        width: 32px;
+        height: 32px;
+        background-color: $color-burgundy;
+        color: $color-white;
+        border-radius: $radius-full;
+        @include flex-center;
+        font-weight: $font-weight-bold;
+        font-size: 0.875rem;
+      }
+
+      .step-title {
+        font-family: $font-serif;
+        font-size: 1.5rem;
+        color: $color-charcoal;
+        margin: 0;
+      }
+    }
+  }
+
+  // Shipping Method Option Cards
+  .shipping-options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-md;
+
+    @include respond-to("tablet") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .shipping-method-card {
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      padding: $space-md;
+      display: flex;
+      align-items: flex-start;
+      gap: $space-sm;
+      cursor: pointer;
+      transition: border-color $transition-fast;
+
+      &:hover,
+      &.is-selected {
+        border-color: $color-burgundy;
+        background-color: $color-burgundy-soft;
+      }
+
+      .method-details {
+        display: flex;
+        flex-direction: column;
+
+        .method-name {
+          font-weight: $font-weight-semibold;
+          color: $color-charcoal;
+          font-size: 0.9375rem;
+        }
+
+        .method-eta {
+          font-size: 0.8125rem;
+          color: $color-charcoal-muted;
+        }
+
+        .method-price {
+          font-weight: $font-weight-semibold;
+          color: $color-burgundy;
+          font-size: 0.875rem;
+          margin-top: $space-2xs;
+        }
+      }
+    }
+  }
+
+  // Payment Selection Options
+  .payment-options-list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+
+    .payment-option-card {
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      padding: $space-md;
+      display: flex;
+      align-items: flex-start;
+      gap: $space-md;
+      cursor: pointer;
+      transition: all $transition-fast;
+
+      &:hover,
+      &.is-selected {
+        border-color: $color-burgundy;
+        background-color: $color-burgundy-soft;
+      }
+
+      .payment-details {
+        flex: 1;
+
+        .payment-title {
+          font-weight: $font-weight-semibold;
+          color: $color-charcoal;
+          font-size: 0.9375rem;
+        }
+
+        .payment-sub {
+          font-size: 0.8125rem;
+          color: $color-charcoal-muted;
+        }
+      }
+    }
+  }
+}
+
+// Order Confirmation View
+.confirmation-section {
+  padding-top: $space-3xl;
+  padding-bottom: $space-4xl;
+
+  .confirmation-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $space-2xl;
+    box-shadow: $shadow-md;
+    text-align: center;
+
+    @include respond-to("tablet") {
+      padding: $space-3xl;
+    }
+
+    .celebration-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: $radius-full;
+      background-color: $color-burgundy-soft;
+      color: $color-burgundy;
+      @include flex-center;
+      margin: 0 auto $space-md;
+
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    .order-id-badge {
+      display: inline-block;
+      background-color: $color-sand;
+      border: 1px solid $color-border;
+      padding: $space-xs $space-lg;
+      border-radius: $radius-full;
+      font-family: $font-serif;
+      font-size: 1.25rem;
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+      margin: $space-md 0;
+    }
+
+    .order-summary-table {
+      margin: $space-2xl 0;
+      text-align: left;
+      border: 1px solid $color-border-light;
+      border-radius: $radius-sm;
+
+      .summary-header {
+        background-color: $color-sand-light;
+        padding: $space-sm $space-md;
+        font-family: $font-serif;
+        font-size: 1.15rem;
+        color: $color-burgundy;
+        border-bottom: 1px solid $color-border-light;
+      }
+
+      .summary-item {
+        @include flex-between;
+        padding: $space-sm $space-md;
+        border-bottom: 1px solid $color-border-light;
+        font-size: 0.875rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

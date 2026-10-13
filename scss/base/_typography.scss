@@ -1,0 +1,108 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — TYPOGRAPHY
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  font-family: $font-sans;
+  font-size: 1rem; // 16px
+  font-weight: $font-weight-regular;
+  color: $color-charcoal;
+}
+
+// Editorial & Display Headings (Cormorant Garamond)
+.font-serif,
+h1,
+h2,
+h3,
+.editorial-title,
+.section-title {
+  font-family: $font-serif;
+  font-weight: $font-weight-semibold;
+  color: $color-burgundy;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.5rem; // 40px
+  letter-spacing: 0.02em;
+
+  @include respond-to("tablet") {
+    font-size: 3.5rem; // 56px
+  }
+
+  @include respond-to("desktop") {
+    font-size: 4.25rem; // 68px
+  }
+}
+
+h2 {
+  font-size: 2rem; // 32px
+
+  @include respond-to("tablet") {
+    font-size: 2.75rem; // 44px
+  }
+
+  @include respond-to("desktop") {
+    font-size: 3.25rem; // 52px
+  }
+}
+
+h3 {
+  font-size: 1.5rem; // 24px
+
+  @include respond-to("tablet") {
+    font-size: 1.85rem; // 30px
+  }
+}
+
+h4 {
+  font-family: $font-serif;
+  font-size: 1.25rem; // 20px
+  font-weight: $font-weight-semibold;
+}
+
+h5 {
+  font-family: $font-sans;
+  font-size: 0.875rem; // 14px
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// Subtitles and Eyebrows
+.eyebrow {
+  font-family: $font-sans;
+  font-size: 0.75rem; // 12px
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $color-gold;
+  margin-bottom: $space-xs;
+  display: block;
+}
+
+.lead-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: $color-charcoal-light;
+
+  @include respond-to("tablet") {
+    font-size: 1.25rem;
+  }
+}
+
+.text-muted {
+  color: $color-charcoal-muted;
+}
+
+.text-burgundy {
+  color: $color-burgundy;
+}
+
+.text-gold {
+  color: $color-gold;
+}

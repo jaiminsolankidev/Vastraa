@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+dist/
+coverage/
+.chrome-temp/
+.chrome-audit-temp/
+.edge-temp/
+screenshots/walkthrough/

@@ -1,0 +1,177 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — HEADER & ANNOUNCEMENT BAR
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Announcement Bar
+.announcement-bar {
+  background-color: $color-burgundy-dark;
+  color: $color-ivory;
+  font-size: 0.8125rem; // 13px
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.05em;
+  padding: $space-xs $space-md;
+  text-align: center;
+  border-bottom: 1px solid rgba($color-gold, 0.25);
+
+  .announcement-bar__link {
+    color: $color-gold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-left: $space-xs;
+
+    &:hover {
+      color: $color-gold-light;
+    }
+  }
+}
+
+// Site Header
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  background-color: rgba($color-ivory, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid $color-border;
+  transition: box-shadow $transition-base;
+
+  &--scrolled {
+    box-shadow: $shadow-sm;
+  }
+
+  .header-inner {
+    @include flex-between;
+    height: 76px;
+
+    @include respond-to("tablet") {
+      height: 88px;
+    }
+  }
+
+  // Brand Wordmark
+  .site-brand {
+    display: flex;
+    align-items: center;
+
+    .brand-logo {
+      height: 38px;
+      width: auto;
+
+      @include respond-to("tablet") {
+        height: 48px;
+      }
+    }
+  }
+
+  // Desktop Navigation
+  .desktop-nav {
+    display: none;
+
+    @include respond-to("desktop-sm") {
+      display: flex;
+      align-items: center;
+      gap: $space-xl;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: $font-weight-medium;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $color-charcoal;
+      padding: $space-xs 0;
+      position: relative;
+      transition: color $transition-fast;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $color-burgundy;
+        transition: width $transition-base;
+      }
+
+      &:hover,
+      &.active {
+        color: $color-burgundy;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Header Actions (Search, Wishlist, Bag)
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+
+    @include respond-to("mobile-lg") {
+      gap: $space-sm;
+    }
+
+    @include respond-to("tablet") {
+      gap: $space-md;
+    }
+
+    .action-btn {
+      @include button-reset;
+      @include flex-center;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: $radius-full;
+      color: $color-charcoal;
+      transition: background-color $transition-fast, color $transition-fast;
+
+      &:hover {
+        background-color: $color-sand;
+        color: $color-burgundy;
+      }
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      // Counter Badge
+      .badge-count {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        background-color: $color-burgundy;
+        color: $color-white;
+        font-size: 0.6875rem; // 11px
+        font-weight: $font-weight-bold;
+        width: 18px;
+        height: 18px;
+        border-radius: $radius-full;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+
+        &:empty,
+        &[data-count="0"] {
+          display: none;
+        }
+      }
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+
+      @include respond-to("desktop-sm") {
+        display: none;
+      }
+    }
+  }
+}

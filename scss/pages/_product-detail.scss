@@ -1,0 +1,43 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — PRODUCT DETAIL PAGE SPECIFIC STYLES
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.product-detail-section {
+  padding-top: $space-xl;
+  padding-bottom: $space-3xl;
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    font-size: 0.8125rem;
+    color: $color-charcoal-muted;
+    margin-bottom: $space-xl;
+
+    a:hover {
+      color: $color-burgundy;
+    }
+
+    .crumb-sep {
+      color: $color-gold;
+    }
+
+    .current-crumb {
+      color: $color-charcoal;
+      font-weight: $font-weight-medium;
+      @include text-truncate;
+      max-width: 280px;
+    }
+  }
+}
+
+// Related Products Section
+.related-products-section {
+  background-color: $color-sand-light;
+  border-top: 1px solid $color-border;
+  padding-top: $space-3xl;
+  padding-bottom: $space-3xl;
+}

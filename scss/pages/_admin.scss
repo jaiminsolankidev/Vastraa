@@ -1,0 +1,721 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — ATELIER ADMIN CONSOLE
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.admin-page {
+  background-color: $color-ivory;
+  min-height: 100vh;
+  padding-bottom: $space-4xl;
+
+  // Header Bar
+  &__header {
+    background-color: $color-burgundy;
+    color: $color-white;
+    padding: $space-md 0;
+    border-bottom: 2px solid $color-gold;
+
+    .admin-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: $space-md;
+    }
+
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: $space-md;
+
+      &__logo {
+        height: 38px;
+        filter: brightness(0) invert(1);
+      }
+
+      &__title {
+        font-family: $font-serif;
+        font-size: 1.5rem;
+        font-weight: $font-weight-medium;
+        letter-spacing: 0.05em;
+        margin: 0;
+      }
+
+      &__badge {
+        background-color: rgba($color-gold, 0.2);
+        color: $color-gold;
+        border: 1px solid rgba($color-gold, 0.4);
+        font-size: 0.75rem;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-weight: $font-weight-medium;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    }
+
+    .admin-actions {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+      flex-wrap: wrap;
+
+      .btn-storefront {
+        background: transparent;
+        color: $color-ivory;
+        border: 1px solid rgba($color-ivory, 0.4);
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        border-radius: $radius-sm;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:hover {
+          background-color: rgba($color-white, 0.1);
+          border-color: $color-gold;
+          color: $color-gold;
+        }
+
+        &--highlight {
+          background-color: rgba($color-gold, 0.2);
+          border-color: $color-gold;
+          color: $color-gold;
+
+          &:hover {
+            background-color: $color-gold;
+            color: $color-charcoal;
+          }
+        }
+      }
+    }
+  }
+
+  // Stats KPI Grid
+  &__stats {
+    margin-top: $space-xl;
+    margin-bottom: $space-2xl;
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: $space-lg;
+    }
+
+    .stat-card {
+      background-color: $color-white;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      padding: $space-lg;
+      box-shadow: $shadow-sm;
+      position: relative;
+      overflow: hidden;
+      transition: transform $transition-fast, box-shadow $transition-fast;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: $color-sand;
+      }
+
+      &--gold::before {
+        background-color: $color-gold;
+      }
+
+      &--burgundy::before {
+        background-color: $color-burgundy;
+      }
+
+      &--warning::before {
+        background-color: #E65100;
+      }
+
+      &__label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: $color-charcoal-muted;
+        margin-bottom: $space-xs;
+      }
+
+      &__value {
+        font-family: $font-serif;
+        font-size: 2rem;
+        font-weight: $font-weight-semibold;
+        color: $color-charcoal;
+        line-height: 1.1;
+      }
+
+      &__sub {
+        font-size: 0.75rem;
+        color: $color-charcoal-muted;
+        margin-top: $space-xs;
+      }
+    }
+  }
+
+  // Tabs Navigation
+  &__tabs {
+    display: flex;
+    gap: $space-sm;
+    border-bottom: 2px solid $color-sand;
+    margin-bottom: $space-2xl;
+    overflow-x: auto;
+    padding-bottom: 2px;
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: $space-md $space-lg;
+      font-size: 0.95rem;
+      font-weight: $font-weight-medium;
+      color: $color-charcoal-muted;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all $transition-fast;
+      white-space: nowrap;
+
+      &:hover {
+        color: $color-burgundy;
+      }
+
+      &.is-active {
+        color: $color-burgundy;
+        font-weight: $font-weight-semibold;
+        border-bottom-color: $color-burgundy;
+      }
+
+      .tab-badge {
+        background-color: $color-sand;
+        color: $color-charcoal;
+        font-size: 0.75rem;
+        padding: 1px 7px;
+        border-radius: 999px;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
+  // Tab Panes
+  .tab-pane {
+    display: none;
+
+    &.is-active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+  }
+
+  // Controls Toolbar (Search & Filter inside tabs)
+  .admin-toolbar {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: $space-md $space-lg;
+    margin-bottom: $space-xl;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-md;
+
+    &__search {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 8px 12px 8px 36px;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        font-size: 0.9rem;
+
+        &:focus {
+          outline: 2px solid $color-gold;
+          border-color: transparent;
+        }
+      }
+
+      svg {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-charcoal-muted;
+      }
+    }
+
+    &__filters {
+      display: flex;
+      align-items: center;
+      gap: $space-sm;
+      flex-wrap: wrap;
+
+      .filter-pill {
+        background-color: $color-sand;
+        border: 1px solid transparent;
+        color: $color-charcoal;
+        padding: 5px 14px;
+        font-size: 0.8rem;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all $transition-fast;
+
+        &:hover {
+          background-color: $color-sand-dark;
+        }
+
+        &.is-active {
+          background-color: $color-burgundy;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  // Admin Tables (Products & Orders)
+  .admin-table-container {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-sm;
+    overflow-x: auto;
+  }
+
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    text-align: left;
+
+    th {
+      background-color: #FAF6F0;
+      color: $color-charcoal;
+      font-weight: $font-weight-semibold;
+      padding: $space-md;
+      border-bottom: 1px solid $color-border;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: $space-md;
+      border-bottom: 1px solid $color-border;
+      vertical-align: middle;
+      color: $color-charcoal;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: rgba($color-sand, 0.15);
+    }
+
+    // Product cells
+    .product-thumb {
+      width: 52px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 4px;
+      background-color: $color-sand;
+      border: 1px solid $color-border-light;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .product-meta {
+      &__title {
+        font-weight: $font-weight-semibold;
+        color: $color-charcoal;
+        display: block;
+        margin-bottom: 3px;
+        font-size: 0.925rem;
+      }
+      &__sku {
+        font-size: 0.75rem;
+        color: $color-charcoal-muted;
+        font-family: monospace;
+      }
+    }
+
+    // Stock meter
+    .stock-meter-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 120px;
+
+      .stock-bar-bg {
+        width: 100%;
+        height: 6px;
+        background-color: #E0E0E0;
+        border-radius: 3px;
+        overflow: hidden;
+
+        .stock-bar-fill {
+          height: 100%;
+          border-radius: 3px;
+          transition: width 0.3s ease;
+
+          &--healthy { background-color: #2E7D32; }
+          &--low { background-color: #E65100; }
+          &--out { background-color: #C62828; }
+        }
+      }
+    }
+
+    // Stock stepper control
+    .stock-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+
+      button {
+        width: 28px;
+        height: 28px;
+        border: 1px solid $color-border;
+        background-color: $color-sand;
+        color: $color-charcoal;
+        border-radius: 3px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all $transition-fast;
+
+        &:hover {
+          background-color: $color-gold;
+          color: $color-white;
+        }
+      }
+
+      input {
+        width: 48px;
+        height: 28px;
+        text-align: center;
+        border: 1px solid $color-border;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: $font-weight-semibold;
+      }
+    }
+
+    // Status Badges
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: $font-weight-semibold;
+      text-transform: capitalize;
+
+      &--in-stock {
+        background-color: #E8F5E9;
+        color: #2E7D32;
+        border: 1px solid #A5D6A7;
+      }
+
+      &--low-stock {
+        background-color: #FFF3E0;
+        color: #E65100;
+        border: 1px solid #FFCC80;
+      }
+
+      &--out-of-stock {
+        background-color: #FFEBEE;
+        color: #C62828;
+        border: 1px solid #EF9A9A;
+      }
+
+      &--confirmed {
+        background-color: #E3F2FD;
+        color: #1565C0;
+        border: 1px solid #90CAF9;
+      }
+
+      &--dispatched {
+        background-color: #FFF8E1;
+        color: #F57F17;
+        border: 1px solid #FFE082;
+      }
+
+      &--delivered {
+        background-color: #E8F5E9;
+        color: #2E7D32;
+        border: 1px solid #A5D6A7;
+      }
+    }
+
+    // Action buttons in table
+    .action-btn {
+      padding: 5px 12px;
+      font-size: 0.75rem;
+      font-weight: $font-weight-medium;
+      border-radius: 3px;
+      border: 1px solid $color-border;
+      background-color: $color-white;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: $color-charcoal;
+      transition: all $transition-fast;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+
+      &--danger {
+        color: #C62828;
+        border-color: rgba(#C62828, 0.3);
+
+        &:hover {
+          background-color: #FFEBEE;
+        }
+      }
+
+      &--primary {
+        background-color: $color-burgundy;
+        color: $color-white;
+        border-color: $color-burgundy;
+
+        &:hover {
+          background-color: $color-burgundy-light;
+        }
+      }
+    }
+  }
+
+  // Atelier Product Studio Layout (Split Screen)
+  .studio-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: $space-2xl;
+    align-items: start;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+
+    .studio-form-col {
+      display: flex;
+      flex-direction: column;
+      gap: $space-xl;
+    }
+
+    .studio-section-card {
+      background-color: $color-white;
+      border: 1px solid $color-border;
+      border-radius: $radius-sm;
+      padding: $space-xl;
+      box-shadow: $shadow-sm;
+
+      &__title {
+        font-family: $font-serif;
+        font-size: 1.35rem;
+        color: $color-burgundy;
+        margin-bottom: $space-sm;
+        border-bottom: 1px solid $color-border-light;
+        padding-bottom: $space-xs;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+
+    // Live Product Card Preview
+    .studio-preview-col {
+      position: sticky;
+      top: 20px;
+
+      .preview-card-wrap {
+        background-color: $color-white;
+        border: 1px solid $color-gold;
+        border-radius: $radius-sm;
+        padding: $space-lg;
+        box-shadow: $shadow-md;
+
+        .preview-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: $space-md;
+          padding-bottom: $space-xs;
+          border-bottom: 1px solid $color-sand;
+
+          h4 {
+            font-family: $font-serif;
+            font-size: 1.1rem;
+            color: $color-burgundy;
+            margin: 0;
+          }
+
+          span {
+            font-size: 0.75rem;
+            color: $color-gold;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+        }
+
+        // Mini preview card
+        .preview-card {
+          border: 1px solid $color-border-light;
+          border-radius: 4px;
+          overflow: hidden;
+          background: #FFFFFF;
+
+          .preview-img-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            position: relative;
+            background-color: $color-sand;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .preview-tag {
+              position: absolute;
+              top: 8px;
+              left: 8px;
+              background-color: $color-burgundy;
+              color: #FFFFFF;
+              font-size: 0.7rem;
+              padding: 2px 8px;
+              border-radius: 2px;
+              font-weight: 600;
+              text-transform: uppercase;
+            }
+          }
+
+          .preview-details {
+            padding: 12px;
+
+            .preview-cat {
+              font-size: 0.75rem;
+              text-transform: uppercase;
+              color: $color-charcoal-muted;
+              margin-bottom: 2px;
+            }
+
+            .preview-name {
+              font-family: $font-serif;
+              font-size: 1.05rem;
+              font-weight: 600;
+              color: $color-charcoal;
+              margin-bottom: 6px;
+              line-height: 1.3;
+            }
+
+            .preview-pricing {
+              display: flex;
+              align-items: baseline;
+              gap: 8px;
+
+              .preview-price {
+                font-weight: 700;
+                color: $color-burgundy;
+                font-size: 1.1rem;
+              }
+
+              .preview-mrp {
+                font-size: 0.85rem;
+                text-decoration: line-through;
+                color: $color-charcoal-muted;
+              }
+
+              .preview-discount {
+                font-size: 0.75rem;
+                color: #2E7D32;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Interactive Size Selector Chips
+  .studio-size-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+
+    .size-chip-btn {
+      background-color: $color-white;
+      border: 1px solid $color-border;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all $transition-fast;
+
+      &:hover {
+        background-color: $color-sand;
+      }
+
+      &.is-selected {
+        background-color: $color-burgundy;
+        border-color: $color-burgundy;
+        color: $color-white;
+        font-weight: $font-weight-semibold;
+      }
+    }
+  }
+
+  // Preset Buttons
+  .preset-buttons-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+
+    .preset-btn {
+      background-color: $color-sand;
+      border: none;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all $transition-fast;
+
+      &:hover {
+        background-color: $color-gold;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,159 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — HOMEPAGE SPECIFIC STYLES
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Luxury Hero Section
+.hero {
+  position: relative;
+  background-color: $color-burgundy-dark;
+  color: $color-ivory;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+
+  @include respond-to("desktop") {
+    min-height: 88vh;
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0.42;
+    filter: saturate(0.85);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(69, 18, 27, 0.94) 0%,
+      rgba(69, 18, 27, 0.75) 55%,
+      rgba(41, 37, 33, 0.6) 100%
+    );
+
+    @include respond-below("tablet") {
+      background: linear-gradient(
+        180deg,
+        rgba(69, 18, 27, 0.9) 0%,
+        rgba(41, 37, 33, 0.75) 100%
+      );
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding-top: $space-3xl;
+    padding-bottom: $space-3xl;
+
+    .hero-eyebrow {
+      color: $color-gold;
+      margin-bottom: $space-sm;
+    }
+
+    .hero-title {
+      color: $color-ivory;
+      font-size: 2.75rem;
+      line-height: 1.1;
+      margin-bottom: $space-md;
+
+      @include respond-to("tablet") {
+        font-size: 4rem;
+      }
+
+      @include respond-to("desktop") {
+        font-size: 4.85rem;
+      }
+    }
+
+    .hero-desc {
+      color: rgba($color-ivory, 0.85);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      margin-bottom: $space-xl;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $space-md;
+    }
+  }
+}
+
+// Editorial Craftsmanship Section
+.editorial-craft {
+  background-color: $color-sand;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  .craft-media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: $radius-sm;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .craft-content {
+    .craft-quote {
+      font-family: $font-serif;
+      font-size: 1.75rem;
+      color: $color-burgundy;
+      line-height: 1.35;
+      margin-bottom: $space-md;
+      font-style: italic;
+
+      @include respond-to("tablet") {
+        font-size: 2.25rem;
+      }
+    }
+
+    .craft-text {
+      color: $color-charcoal-light;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: $space-lg;
+    }
+
+    .craft-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $space-md;
+      padding-top: $space-lg;
+      border-top: 1px solid rgba($color-charcoal, 0.15);
+
+      .stat-num {
+        font-family: $font-serif;
+        font-size: 2rem;
+        font-weight: $font-weight-semibold;
+        color: $color-burgundy;
+        line-height: 1;
+      }
+
+      .stat-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: $color-charcoal-muted;
+        margin-top: $space-2xs;
+      }
+    }
+  }
+}

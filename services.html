@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Couture & Atelier Services — Vastraa Luxury Indian Ethnic Wear</title>
+  <meta name="description" content="Experience Vastraa's bespoke services: Bridal Trousseau Design, Made-to-Measure Custom Tailoring, Heirloom Zari Restoration, and Global Styling Consultations.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="announcement-bar" role="region" aria-label="Store Announcement">
+    <span>Complimentary Express Delivery on orders above ₹2,999 • Code: <strong>VASTRAA10</strong> for 10% discount</span>
+    <a href="shop.html" class="announcement-bar__link">Shop Now</a>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-brand" aria-label="Vastraa Home">
+        <img src="assets/images/icons/logo.svg" alt="Vastraa Luxury Ethnic Wear" class="brand-logo" width="180" height="45">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <a href="shop.html?category=women" class="nav-link">Women</a>
+        <a href="shop.html?category=men" class="nav-link">Men</a>
+        <a href="shop.html?category=kids" class="nav-link">Kids</a>
+        <a href="shop.html" class="nav-link">All Collections</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="about.html" class="nav-link">Our Heritage</a>
+        <a href="contact.html" class="nav-link">Atelier</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="action-btn" data-action="open-search" aria-label="Search catalogue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <a href="wishlist.html" class="action-btn" aria-label="View Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count" data-type="wishlist" aria-hidden="true"></span>
+        </a>
+        <button type="button" class="action-btn" data-action="open-cart" aria-label="Open Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="badge-count" data-type="cart" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="action-btn mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <img src="assets/images/icons/logo.svg" alt="Vastraa" class="drawer-logo" width="140" height="35">
+      <button type="button" class="drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="mobile-nav-list">
+        <a href="shop.html?category=women" class="mobile-nav-link">Women's Couture</a>
+        <a href="shop.html?category=men" class="mobile-nav-link">Men's Attire</a>
+        <a href="shop.html?category=kids" class="mobile-nav-link">Kids' Festive</a>
+        <a href="shop.html" class="mobile-nav-link">All Collections</a>
+        <a href="services.html" class="mobile-nav-link active">Services & Bespoke</a>
+        <a href="wishlist.html" class="mobile-nav-link">Saved Wishlist</a>
+        <a href="track-order.html" class="mobile-nav-link">Track Your Order</a>
+        <a href="about.html" class="mobile-nav-link">Our Heritage</a>
+        <a href="contact.html" class="mobile-nav-link">Atelier</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay" role="dialog" aria-modal="true" aria-label="Product Search" aria-hidden="true">
+    <div class="search-overlay__content">
+      <div class="search-overlay__header">
+        <h2 class="search-overlay__title">Search the Atelier</h2>
+        <button type="button" class="search-close-btn" aria-label="Close search">&times;</button>
+      </div>
+      <form action="search.html" method="GET" class="search-form">
+        <div class="search-input-wrap">
+          <input type="search" name="q" placeholder="Search by weave, fabric, occasion..." autocomplete="off" required>
+          <button type="submit" aria-label="Submit Search">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop" aria-hidden="true"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag" aria-hidden="true">
+    <div class="cart-drawer__header">
+      <h3 class="cart-drawer__title">Your Bag (<span data-cart-count>0</span>)</h3>
+      <button type="button" class="drawer-close-btn" aria-label="Close bag">&times;</button>
+    </div>
+    <div class="cart-drawer__body" id="cart-drawer-items">
+      <!-- Populated dynamically -->
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__summary">
+        <span>Subtotal</span>
+        <strong id="cart-drawer-subtotal">₹0</strong>
+      </div>
+      <a href="cart.html" class="btn btn--outline btn--full">View Bag</a>
+      <a href="checkout.html" class="btn btn--primary btn--full" style="margin-top: 0.5rem;">Proceed to Checkout</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="page-hero" style="background: linear-gradient(rgba(41,37,33,0.7), rgba(41,37,33,0.8)), url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; padding: 6rem 0; color: #FFF; text-align: center;">
+      <div class="container container--narrow">
+        <span class="sub-heading" style="color: #DFC48A; letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.85rem; font-weight: 600;">Handcrafted Elegance</span>
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 0.75rem 0 1.25rem; color: #F8F3EB; line-height: 1.15;">Atelier Bespoke & Couture Services</h1>
+        <p style="font-size: 1.1rem; line-height: 1.6; max-width: 680px; margin: 0 auto; color: #E9DFD1;">
+          From private bridal consultations to ancestral zari conservation, our master artisans dedicate hundreds of hours to tailoring pieces worthy of your life's greatest celebrations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+          <span class="sub-heading" style="color: #641E2B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem;">Dedicated Craftsmanship</span>
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.5rem; color: #292521; margin: 0.5rem 0;">Our Atelier Offerings</h2>
+          <div style="width: 60px; height: 2px; background: #C5A15B; margin: 1rem auto;"></div>
+        </div>
+
+        <div class="grid-2" style="gap: 2.5rem;">
+
+          <!-- Service 1 -->
+          <article class="service-card" style="background: #FFFFFF; border: 1px solid #E4D8C7; border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 16px rgba(41,37,33,0.04); display: flex; flex-direction: column;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #FAF6F0; border: 1px solid #C5A15B; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #641E2B;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: #641E2B; margin-bottom: 0.75rem;">Bespoke Bridal Trousseau Design</h3>
+            <p style="color: #6B635B; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.25rem;">
+              Complete couture curation for the bride, groom, and immediate wedding party. We align color palettes, historic motifs, and heirloom silks to curate a seamless ceremonial wardrobe tailored to your family's heritage.
+            </p>
+            <ul style="color: #292521; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.25rem;">
+              <li>Custom dye matching & pure zari weaving</li>
+              <li>Hand-drawn zardozi and gota patti embroidery</li>
+              <li>Dedicated bridal stylist throughout your wedding journey</li>
+            </ul>
+            <a href="#book-service" class="btn btn--outline" style="align-self: flex-start; margin-top: auto;">Inquire for Bridal</a>
+          </article>
+
+          <!-- Service 2 -->
+          <article class="service-card" style="background: #FFFFFF; border: 1px solid #E4D8C7; border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 16px rgba(41,37,33,0.04); display: flex; flex-direction: column;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #FAF6F0; border: 1px solid #C5A15B; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #641E2B;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: #641E2B; margin-bottom: 0.75rem;">Made-to-Measure Custom Tailoring</h3>
+            <p style="color: #6B635B; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.25rem;">
+              Achieve perfection in fit with our master tailors. Whether you require custom-stitched blouse necklines, specialized lehenga flare can-can layering, or personalized sherwani chest contours, every seam is measured to millimeters.
+            </p>
+            <ul style="color: #292521; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.25rem;">
+              <li>32-point anatomical measurement profiling</li>
+              <li>Padded cups, concealed zippers & pure cotton lining</li>
+              <li>Complimentary follow-up fitting adjustments</li>
+            </ul>
+            <a href="#book-service" class="btn btn--outline" style="align-self: flex-start; margin-top: auto;">Request Custom Fit</a>
+          </article>
+
+          <!-- Service 3 -->
+          <article class="service-card" style="background: #FFFFFF; border: 1px solid #E4D8C7; border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 16px rgba(41,37,33,0.04); display: flex; flex-direction: column;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #FAF6F0; border: 1px solid #C5A15B; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #641E2B;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: #641E2B; margin-bottom: 0.75rem;">Heirloom Zari & Silk Conservation</h3>
+            <p style="color: #6B635B; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.25rem;">
+              Preserve your grandmother's ancestral Kanjivaram or antique Banarasi saree. Our conservation specialists carefully clean tarnished real silver zari, repair frayed selvedges, and reinforce delicate silk foundations.
+            </p>
+            <ul style="color: #292521; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.25rem;">
+              <li>Organic organic herbal wash & zari polishing</li>
+              <li>Micro-stitching of vulnerable warp & weft threads</li>
+              <li>Acid-free archive storage wrapping included</li>
+            </ul>
+            <a href="#book-service" class="btn btn--outline" style="align-self: flex-start; margin-top: auto;">Preserve Heirloom</a>
+          </article>
+
+          <!-- Service 4 -->
+          <article class="service-card" style="background: #FFFFFF; border: 1px solid #E4D8C7; border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 16px rgba(41,37,33,0.04); display: flex; flex-direction: column;">
+            <div style="width: 52px; height: 52px; border-radius: 50%; background: #FAF6F0; border: 1px solid #C5A15B; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: #641E2B;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: #641E2B; margin-bottom: 0.75rem;">Global Virtual Styling Concierge</h3>
+            <p style="color: #6B635B; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.25rem;">
+              For our patrons across the United States, United Kingdom, Canada, UAE, and Singapore. Connect via high-definition video with our senior curators to inspect weave lusters, drape behaviors, and receive physical fabric swatches.
+            </p>
+            <ul style="color: #292521; font-size: 0.875rem; line-height: 1.8; margin-bottom: 1.5rem; padding-left: 1.25rem;">
+              <li>Private 45-minute live camera styling walkthrough</li>
+              <li>Express DHL/FedEx insured courier to 40+ countries</li>
+              <li>Custom duties handling and customs documentation</li>
+            </ul>
+            <a href="#book-service" class="btn btn--outline" style="align-self: flex-start; margin-top: auto;">Book Virtual Call</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bespoke Service Consultation Booking Form -->
+    <section class="section" id="book-service" style="background: #FAF6F0; border-top: 1px solid #E4D8C7; border-bottom: 1px solid #E4D8C7;">
+      <div class="container container--narrow">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <span class="sub-heading" style="color: #641E2B; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Private Atelier Reservation</span>
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.25rem; color: #292521; margin: 0.5rem 0;">Reserve a Personal Consultation</h2>
+          <p style="color: #6B635B; font-size: 0.95rem; max-width: 540px; margin: 0 auto;">Our senior styling directors respond within 24 business hours to confirm your private atelier appointment.</p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E4D8C7; border-radius: 8px; padding: 2.5rem; box-shadow: 0 10px 30px rgba(41,37,33,0.06);">
+          <form id="service-booking-form" novalidate>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.25rem;">
+              <div>
+                <label for="booking-name" style="display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 6px; color: #292521;">Your Full Name *</label>
+                <input type="text" id="booking-name" name="fullName" required placeholder="e.g. Radhika Singhania" style="width: 100%; padding: 10px 14px; border: 1px solid #E4D8C7; border-radius: 4px; font-size: 0.9rem;">
+              </div>
+              <div>
+                <label for="booking-email" style="display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 6px; color: #292521;">Email Address *</label>
+                <input type="email" id="booking-email" name="email" required placeholder="name@example.com" style="width: 100%; padding: 10px 14px; border: 1px solid #E4D8C7; border-radius: 4px; font-size: 0.9rem;">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.25rem;">
+              <div>
+                <label for="booking-phone" style="display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 6px; color: #292521;">Phone / WhatsApp *</label>
+                <input type="tel" id="booking-phone" name="phone" required placeholder="+91 98200 12345" style="width: 100%; padding: 10px 14px; border: 1px solid #E4D8C7; border-radius: 4px; font-size: 0.9rem;">
+              </div>
+              <div>
+                <label for="booking-service-type" style="display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 6px; color: #292521;">Service Required *</label>
+                <select id="booking-service-type" name="serviceType" style="width: 100%; padding: 10px 14px; border: 1px solid #E4D8C7; border-radius: 4px; font-size: 0.9rem; background: #FFF;">
+                  <option value="bridal-trousseau">Bespoke Bridal Trousseau Design</option>
+                  <option value="custom-tailoring">Made-to-Measure Custom Tailoring</option>
+                  <option value="heirloom-conservation">Heirloom Zari & Silk Restoration</option>
+                  <option value="virtual-styling">Global Virtual Styling Concierge</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <label for="booking-notes" style="display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 6px; color: #292521;">Event Dates & Vision Details</label>
+              <textarea id="booking-notes" name="notes" rows="4" placeholder="Tell us about your celebratory dates, preferred colors, silhouette inspirations, or ancestral garments..." style="width: 100%; padding: 10px 14px; border: 1px solid #E4D8C7; border-radius: 4px; font-size: 0.9rem; font-family: inherit;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="padding: 12px 32px; font-size: 0.95rem; font-weight: 600; cursor: pointer;">
+              Confirm Consultation Request ⟶
+            </button>
+            <div id="booking-status-msg" style="display: none; margin-top: 1rem; padding: 12px; background: #E8F5E9; color: #2E7D32; border-radius: 4px; font-size: 0.875rem;">
+              ✨ Thank you. Your appointment request has been logged with our Master Atelier team. A concierge will contact you via WhatsApp and email.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="assets/images/icons/logo.svg" alt="Vastraa" class="footer-brand-logo" width="160" height="40">
+          <p class="footer-desc">
+            Vastraa celebrates the timeless opulence of Indian handlooms, crafting heirloom sarees, bridal ensembles, and royal regalia with unwavering reverence for authenticity and artisans.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women's Couture</a></li>
+            <li><a href="shop.html?category=men">Men's Sherwanis & Kurtas</a></li>
+            <li><a href="shop.html?category=kids">Kids' Festive Regalia</a></li>
+            <li><a href="services.html">Bespoke Atelier Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Care</h4>
+          <ul class="footer-links">
+            <li><a href="track-order.html">Track Your Order</a></li>
+            <li><a href="contact.html">Contact Concierge</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">The Vastraa Gazette</h4>
+          <p class="footer-desc">Subscribe to receive private invitations to new weave releases.</p>
+          <form class="footer-newsletter-form" id="footer-newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </div>
+            <div id="newsletter-status-msg" class="newsletter-privacy-note" role="status">We respect your privacy.</div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Vastraa Heritage Couture. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="shipping-policy.html">Shipping Terms</a>
+          <a href="returns-policy.html">Return Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { validateForm } from "./js/form-validation.js";
+
+    const form = document.getElementById("service-booking-form");
+    const statusMsg = document.getElementById("booking-status-msg");
+
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const schema = {
+        fullName: { required: true, minLength: 2, label: "Full Name" },
+        email: { required: true, email: true, label: "Email Address" },
+        phone: { required: true, phone: true, label: "Phone Number" }
+      };
+
+      if (validateForm(form, schema)) {
+        form.reset();
+        if (statusMsg) {
+          statusMsg.style.display = "block";
+          setTimeout(() => { statusMsg.style.display = "none"; }, 6000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

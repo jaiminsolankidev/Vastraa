@@ -1,0 +1,143 @@
+/**
+ * Vastraa Premium Indian Ethnic Wear — Layout Architecture
+ * Grid & Flexbox layouts, 2D structural matrices, and fluid container systems
+ */
+
+:root {
+  --container-max-width: 1400px;
+  --container-gutter: 2rem;
+  --container-gutter-sm: 1rem;
+}
+
+/* Base Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+.container--narrow {
+  max-width: 980px;
+}
+
+.container--fluid {
+  max-width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Standard Section Layouts */
+.section {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  position: relative;
+}
+
+.section--sm {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.section--lg {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Two-Dimensional CSS Grid Layouts */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Product Catalogue Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.25rem 1.75rem;
+}
+
+/* Editorial Split Layout (Hero & Craftsmanship) */
+.editorial-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.editorial-split--reversed {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+/* E-Commerce Checkout & Cart 2-Column Layout */
+.commerce-split {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Flexbox Arrangements */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation & Header Flexbox */
+.header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.nav-layout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.action-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="craftBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E9DFD1"/>
+      <stop offset="100%" stop-color="#D7C9B6"/>
+    </linearGradient>
+    <pattern id="loomPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="24" y2="24" stroke="#641E2B" stroke-width="0.5" opacity="0.15"/>
+      <line x1="24" y1="0" x2="0" y2="24" stroke="#C5A15B" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#craftBg)"/>
+  <rect width="100%" height="100%" fill="url(#loomPattern)"/>
+  <rect x="30" y="30" width="1140" height="740" fill="none" stroke="#C5A15B" stroke-width="1.5" opacity="0.5"/>
+  <g transform="translate(600, 400)" text-anchor="middle">
+    <circle r="120" fill="#641E2B" opacity="0.08"/>
+    <!-- Weaving Loom Shuttle Icon -->
+    <path d="M-80 0 C-40 -30 40 -30 80 0 C40 30 -40 30 -80 0 Z" fill="none" stroke="#641E2B" stroke-width="2.5"/>
+    <line x1="-50" y1="0" x2="50" y2="0" stroke="#C5A15B" stroke-width="2"/>
+    <circle cx="0" cy="0" r="8" fill="#C5A15B"/>
+    <text y="70" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="600" letter-spacing="3" fill="#641E2B">HANDLOOM & CRAFTSMANSHIP</text>
+    <text y="100" font-family="'Inter', sans-serif" font-size="12" font-weight="500" letter-spacing="2" fill="#5A544F">TIMELESS INDIAN TEXTILES</text>
+  </g>
+</svg>

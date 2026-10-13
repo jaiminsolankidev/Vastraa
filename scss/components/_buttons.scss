@@ -1,0 +1,127 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — BUTTONS & LINKS
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  font-family: $font-sans;
+  font-size: 0.875rem; // 14px
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all $transition-base;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  @include focus-ring(2px, $color-burgundy);
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // Primary Burgundy Button
+  &--primary {
+    background-color: $color-burgundy;
+    color: $color-white;
+    border-color: $color-burgundy;
+
+    &:hover {
+      background-color: $color-burgundy-dark;
+      border-color: $color-burgundy-dark;
+      box-shadow: $shadow-md;
+    }
+  }
+
+  // Secondary Gold Accent Button
+  &--gold {
+    background-color: $color-gold;
+    color: $color-charcoal;
+    border-color: $color-gold;
+
+    &:hover {
+      background-color: $color-gold-light;
+      border-color: $color-gold-light;
+      box-shadow: $shadow-md;
+    }
+  }
+
+  // Outline Luxury Button
+  &--outline {
+    background-color: transparent;
+    color: $color-burgundy;
+    border-color: $color-burgundy;
+
+    &:hover {
+      background-color: $color-burgundy;
+      color: $color-white;
+    }
+
+    &-white {
+      color: $color-white;
+      border-color: rgba($color-white, 0.7);
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-charcoal;
+      }
+    }
+  }
+
+  // Secondary Sand Button
+  &--secondary {
+    background-color: $color-sand;
+    color: $color-charcoal;
+    border-color: $color-border;
+
+    &:hover {
+      background-color: $color-sand-dark;
+    }
+  }
+
+  // Small size
+  &--sm {
+    padding: 0.55rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  // Large size
+  &--lg {
+    padding: 1.1rem 2.25rem;
+    font-size: 0.9375rem;
+  }
+
+  // Full width
+  &--full {
+    width: 100%;
+  }
+}
+
+// Icon Button
+.btn-icon {
+  @include button-reset;
+  @include flex-center;
+  width: 42px;
+  height: 42px;
+  border-radius: $radius-full;
+  color: $color-charcoal;
+  transition: background-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background-color: $color-sand;
+    color: $color-burgundy;
+  }
+}

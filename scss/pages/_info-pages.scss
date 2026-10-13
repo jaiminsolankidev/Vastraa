@@ -1,0 +1,267 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — BRAND & SUPPORT PAGES (ABOUT, CONTACT, FAQ, POLICIES, TRACKING, 404)
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// General Editorial Content Page Layout
+.info-page-section {
+  padding-top: $space-2xl;
+  padding-bottom: $space-4xl;
+
+  .policy-content-wrapper {
+    max-width: 820px;
+    margin: 0 auto;
+    background-color: $color-white;
+    padding: $space-2xl;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    box-shadow: $shadow-sm;
+
+    @include respond-to("tablet") {
+      padding: $space-3xl;
+    }
+
+    h2 {
+      font-size: 1.85rem;
+      margin-top: $space-xl;
+      margin-bottom: $space-sm;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin-top: $space-lg;
+      margin-bottom: $space-xs;
+    }
+
+    p {
+      color: $color-charcoal-light;
+      line-height: 1.75;
+      margin-bottom: $space-md;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: $space-xl;
+      margin-bottom: $space-md;
+      color: $color-charcoal-light;
+
+      li {
+        margin-bottom: $space-xs;
+        line-height: 1.6;
+      }
+    }
+
+    .draft-legal-notice {
+      background-color: $color-sand-light;
+      border-left: 4px solid $color-gold;
+      padding: $space-md $space-lg;
+      margin-bottom: $space-2xl;
+      font-size: 0.8125rem;
+      color: $color-charcoal-muted;
+    }
+  }
+}
+
+// Contact Page 2-Column Grid
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2xl;
+
+  @include respond-to("desktop-sm") {
+    grid-template-columns: 1.2fr 1fr;
+    gap: $space-3xl;
+  }
+
+  .contact-form-box {
+    background-color: $color-white;
+    padding: $space-2xl;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+  }
+
+  .contact-info-box {
+    background-color: $color-sand;
+    padding: $space-2xl;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+
+    .info-block {
+      margin-bottom: $space-xl;
+
+      h4 {
+        font-size: 1.35rem;
+        color: $color-burgundy;
+        margin-bottom: $space-2xs;
+      }
+
+      p {
+        color: $color-charcoal-light;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+// FAQ Page Accordion List
+.faq-accordion-list {
+  max-width: 820px;
+  margin: 0 auto;
+
+  .faq-item {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    margin-bottom: $space-md;
+    overflow: hidden;
+
+    &__trigger {
+      @include button-reset;
+      @include flex-between;
+      width: 100%;
+      padding: $space-lg $space-xl;
+      font-family: $font-serif;
+      font-size: 1.35rem;
+      font-weight: $font-weight-semibold;
+      color: $color-charcoal;
+      text-align: left;
+
+      .faq-icon {
+        transition: transform $transition-base;
+        color: $color-gold;
+        font-size: 1.25rem;
+      }
+
+      &[aria-expanded="true"] .faq-icon {
+        transform: rotate(45deg);
+        color: $color-burgundy;
+      }
+    }
+
+    &__panel {
+      padding: 0 $space-xl $space-xl;
+      color: $color-charcoal-light;
+      line-height: 1.7;
+      font-size: 0.9375rem;
+
+      &[hidden] {
+        display: none;
+      }
+    }
+  }
+}
+
+// Order Tracking Timeline
+.tracking-timeline-box {
+  max-width: 760px;
+  margin: 0 auto;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  padding: $space-2xl;
+  margin-top: $space-2xl;
+
+  .tracking-header {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: $space-md;
+    margin-bottom: $space-2xl;
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $space-sm;
+
+    .tracking-id {
+      font-family: $font-serif;
+      font-size: 1.45rem;
+      color: $color-burgundy;
+    }
+
+    .tracking-status-badge {
+      background-color: $color-burgundy-soft;
+      color: $color-burgundy;
+      padding: 0.25rem 0.75rem;
+      border-radius: $radius-full;
+      font-weight: $font-weight-semibold;
+      font-size: 0.8125rem;
+    }
+  }
+
+  .timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    position: relative;
+    padding-left: $space-2xl;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 12px;
+      width: 2px;
+      background-color: $color-border;
+    }
+
+    .timeline-step {
+      position: relative;
+
+      .step-marker {
+        position: absolute;
+        left: -32px;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        border-radius: $radius-full;
+        background-color: $color-white;
+        border: 3px solid $color-border;
+
+        &--done {
+          background-color: $color-burgundy;
+          border-color: $color-burgundy;
+        }
+      }
+
+      .step-name {
+        font-weight: $font-weight-semibold;
+        font-size: 1rem;
+        color: $color-charcoal;
+      }
+
+      .step-time {
+        font-size: 0.8125rem;
+        color: $color-charcoal-muted;
+      }
+    }
+  }
+}
+
+// 404 Error Page
+.error-404-box {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: $space-4xl $space-md;
+
+  .error-code {
+    font-family: $font-serif;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: $font-weight-bold;
+    color: $color-gold;
+    margin-bottom: $space-xs;
+  }
+
+  .error-title {
+    font-size: 2.25rem;
+    margin-bottom: $space-md;
+  }
+
+  .error-desc {
+    color: $color-charcoal-muted;
+    font-size: 1.05rem;
+    margin-bottom: $space-2xl;
+  }
+}

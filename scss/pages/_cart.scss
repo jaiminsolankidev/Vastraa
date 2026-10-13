@@ -1,0 +1,226 @@
+// =============================================================================
+// VASTRAA DESIGN SYSTEM — CART PAGE SPECIFIC STYLES
+// =============================================================================
+
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.cart-page-section {
+  padding-top: $space-2xl;
+  padding-bottom: $space-4xl;
+
+  .cart-table-wrapper {
+    background-color: $color-white;
+    border-radius: $radius-sm;
+    border: 1px solid $color-border;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: $color-sand-light;
+      border-bottom: 1px solid $color-border;
+
+      th {
+        padding: $space-md;
+        font-family: $font-serif;
+        font-size: 1.05rem;
+        font-weight: $font-weight-semibold;
+        color: $color-burgundy;
+        text-align: left;
+        white-space: nowrap;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $color-border-light;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      td {
+        padding: $space-lg $space-md;
+        vertical-align: middle;
+      }
+    }
+
+    .cart-product-cell {
+      display: flex;
+      align-items: center;
+      gap: $space-md;
+      min-width: 260px;
+
+      .cart-item-img {
+        width: 80px;
+        aspect-ratio: 4 / 5;
+        border-radius: $radius-sm;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .cart-item-details {
+        h4 {
+          font-family: $font-serif;
+          font-size: 1.15rem;
+          color: $color-charcoal;
+          margin-bottom: $space-2xs;
+
+          a:hover {
+            color: $color-burgundy;
+          }
+        }
+
+        .item-spec {
+          font-size: 0.8125rem;
+          color: $color-charcoal-muted;
+        }
+      }
+    }
+
+    .cart-price-cell {
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .cart-remove-btn {
+      @include button-reset;
+      color: $color-charcoal-muted;
+      font-size: 0.85rem;
+      padding: $space-xs $space-sm;
+      transition: all $transition-fast;
+
+      &:hover {
+        color: $color-error;
+      }
+    }
+
+    @media (max-width: 640px) {
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        display: block;
+        padding: $space-md;
+        border-bottom: 1px solid $color-border;
+        position: relative;
+      }
+
+      tbody td {
+        display: block;
+        padding: $space-xs 0;
+        border: none;
+
+        &.cart-product-cell {
+          min-width: 0;
+          margin-bottom: $space-sm;
+        }
+
+        &.cart-price-cell {
+          display: inline-block;
+          margin-right: $space-md;
+        }
+
+        &:nth-child(3) {
+          margin-top: $space-xs;
+          margin-bottom: $space-xs;
+        }
+
+        &:last-child {
+          text-align: right;
+          margin-top: $space-xs;
+        }
+      }
+    }
+  }
+
+  // Cart Order Summary Box
+  .cart-summary-box {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    padding: $space-xl;
+    position: sticky;
+    top: 100px;
+
+    .summary-title {
+      font-family: $font-serif;
+      font-size: 1.5rem;
+      font-weight: $font-weight-semibold;
+      color: $color-burgundy;
+      margin-bottom: $space-lg;
+      padding-bottom: $space-sm;
+      border-bottom: 1px solid $color-border;
+    }
+
+    .summary-line {
+      @include flex-between;
+      font-size: 0.9375rem;
+      color: $color-charcoal-light;
+      margin-bottom: $space-sm;
+
+      &--total {
+        font-size: 1.25rem;
+        font-weight: $font-weight-semibold;
+        color: $color-charcoal;
+        margin-top: $space-md;
+        padding-top: $space-md;
+        border-top: 1px solid $color-border;
+
+        .price-total {
+          color: $color-burgundy;
+          font-size: 1.45rem;
+        }
+      }
+    }
+
+    .promo-input-group {
+      display: flex;
+      gap: $space-xs;
+      margin-top: $space-md;
+      margin-bottom: $space-lg;
+
+      input {
+        flex: 1;
+        padding: 0.65rem 0.75rem;
+        border: 1px solid $color-border;
+        border-radius: $radius-sm;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+      }
+    }
+
+    .promo-applied-tag {
+      background-color: $color-success-bg;
+      color: $color-success;
+      padding: 0.35rem 0.65rem;
+      border-radius: $radius-sm;
+      font-size: 0.8125rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: $space-md;
+
+      .remove-promo-btn {
+        @include button-reset;
+        font-weight: $font-weight-bold;
+        color: $color-error;
+      }
+    }
+  }
+}

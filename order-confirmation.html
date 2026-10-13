@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation — Vastraa Luxury Indian Ethnic Wear</title>
+  <meta name="description" content="Thank you for your order. Review your demo order receipt and tracking timeline.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-brand" aria-label="Vastraa Home">
+        <img src="assets/images/icons/logo.svg" alt="Vastraa Luxury Ethnic Wear" class="brand-logo" width="180" height="45">
+      </a>
+      <nav class="desktop-nav">
+        <a href="shop.html" class="nav-link">Shop Collections</a>
+        <a href="track-order.html" class="nav-link">Track Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+    <section class="confirmation-section">
+      <div class="container">
+        
+        <div class="confirmation-card">
+          <div class="celebration-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+
+          <span class="eyebrow">DEMONSTRATION ORDER PLACED</span>
+          <h1 style="font-size: 2.75rem; margin-bottom: 0.5rem; color: #641E2B;">Dhanyavaad! Your Order is Confirmed</h1>
+          <p style="color: #5A544F; max-width: 580px; margin: 0 auto; line-height: 1.6;">
+            Your bespoke order has been recorded into our demonstration atelier system. A simulated order acknowledgment has been generated below.
+          </p>
+
+          <div class="order-id-badge" id="conf-order-id">VAS-2026-0000</div>
+
+          <div style="margin: 1.5rem 0;">
+            <span class="badge badge--gold" id="conf-status-text" style="font-size: 0.875rem; padding: 0.4rem 1rem;">
+              Confirmed & Preparing for Atelier Handcrafting
+            </span>
+          </div>
+
+          <!-- Order Summary Details -->
+          <div class="order-summary-table">
+            <div class="summary-header">Shipping & Recipient Details</div>
+            <div class="summary-item">
+              <span style="color: #6B635B;">Recipient</span>
+              <strong id="conf-name">Customer Name</strong>
+            </div>
+            <div class="summary-item">
+              <span style="color: #6B635B;">Delivery Address</span>
+              <span id="conf-address" style="text-align: right; max-width: 380px;">Address details</span>
+            </div>
+            <div class="summary-item">
+              <span style="color: #6B635B;">Contact</span>
+              <span id="conf-contact">Email & Phone</span>
+            </div>
+            <div class="summary-item">
+              <span style="color: #6B635B;">Simulated Payment</span>
+              <span id="conf-payment">UPI (Demo)</span>
+            </div>
+            <div class="summary-item">
+              <span style="color: #6B635B;">Estimated Delivery</span>
+              <strong style="color: #235F3D;">3–5 Business Days</strong>
+            </div>
+            <div class="summary-item" style="background-color: #F8F3EB; font-weight: 700; font-size: 1rem;">
+              <span>Total Paid (Simulated)</span>
+              <span style="color: #641E2B;" id="conf-total">₹0</span>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="track-order.html" class="btn btn--primary" id="track-order-link">Track Your Order Timeline</a>
+            <a href="shop.html" class="btn btn--outline">Continue Exploring Collections</a>
+          </div>
+
+          <p style="font-size: 0.8125rem; color: #736B63; margin-top: 2rem;">
+            * Note: This is an educational demonstration frontend. No charges were made and no courier will be dispatched.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="margin-top: 0; border-top: none;">
+        <p class="footer-copy">&copy; 2026 Vastraa Heritage Couture. Demonstration Order System.</p>
+        <div class="footer-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module">
+    import { orderService } from "./js/modules/order.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const orderId = params.get("orderId");
+
+      const order = orderService.getOrder(orderId) || orderService.getAllOrders()[0];
+
+      if (order) {
+        document.getElementById("conf-order-id").textContent = order.orderId;
+        document.getElementById("conf-name").textContent = order.customer.fullName;
+        document.getElementById("conf-address").textContent = `${order.customer.address}, ${order.customer.city}, ${order.customer.state} - ${order.customer.postalCode}`;
+        document.getElementById("conf-contact").textContent = `${order.customer.phone} • ${order.customer.email}`;
+        document.getElementById("conf-payment").textContent = order.paymentMethod;
+        document.getElementById("conf-total").textContent = order.summary.formattedTotal;
+        document.getElementById("track-order-link").href = `track-order.html?orderId=${encodeURIComponent(order.orderId)}`;
+      }
+    });
+  </script>
+</body>
+</html>

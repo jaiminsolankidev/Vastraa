@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <radialGradient id="heroGlow" cx="65%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#4A141E"/>
+      <stop offset="60%" stop-color="#2D0B12"/>
+      <stop offset="100%" stop-color="#190509"/>
+    </radialGradient>
+    <pattern id="royalJaali" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L80 40 L40 80 L0 40 Z" fill="none" stroke="#C5A15B" stroke-width="0.75" opacity="0.18"/>
+      <circle cx="40" cy="40" r="4" fill="#C5A15B" opacity="0.25"/>
+    </pattern>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2DEB0"/>
+      <stop offset="50%" stop-color="#C5A15B"/>
+      <stop offset="100%" stop-color="#9C7838"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#heroGlow)"/>
+  <rect width="100%" height="100%" fill="url(#royalJaali)"/>
+  <!-- Decorative border framing -->
+  <rect x="60" y="60" width="1800" height="960" fill="none" stroke="#C5A15B" stroke-width="1.5" opacity="0.3"/>
+  <rect x="75" y="75" width="1770" height="930" fill="none" stroke="#C5A15B" stroke-width="0.75" opacity="0.2"/>
+  <!-- Right decorative mandala -->
+  <g transform="translate(1300, 540)" opacity="0.25" stroke="#C5A15B" fill="none" stroke-width="1.5">
+    <circle r="360" stroke-dasharray="8 6"/>
+    <circle r="280"/>
+    <circle r="190"/>
+    <circle r="90" fill="#641E2B" opacity="0.4"/>
+    <path d="M0 -360 L0 360 M-360 0 L360 0 M-255 -255 L255 255 M-255 255 L255 -255"/>
+  </g>
+</svg>

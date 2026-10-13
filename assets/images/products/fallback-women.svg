@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="bgWomen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F3EB"/>
+      <stop offset="50%" stop-color="#EFE6D8"/>
+      <stop offset="100%" stop-color="#E3D2BC"/>
+    </linearGradient>
+    <pattern id="jaali" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30 0 L60 30 L30 60 L0 30 Z" fill="none" stroke="#C5A15B" stroke-width="0.75" opacity="0.3"/>
+      <circle cx="30" cy="30" r="4" fill="none" stroke="#641E2B" stroke-width="0.75" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bgWomen)"/>
+  <rect width="100%" height="100%" fill="url(#jaali)"/>
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="#C5A15B" stroke-width="1.5" opacity="0.6"/>
+  <rect x="55" y="55" width="690" height="890" fill="none" stroke="#641E2B" stroke-width="0.75" opacity="0.4"/>
+  <!-- Central Silhouette & Motif -->
+  <g transform="translate(400, 480)" text-anchor="middle">
+    <circle cx="0" cy="-60" r="70" fill="#641E2B" opacity="0.08"/>
+    <!-- Paisley Ornament -->
+    <path d="M0 -140 C50 -70 80 10 0 90 C-80 10 -50 -70 0 -140 Z" fill="none" stroke="#641E2B" stroke-width="3"/>
+    <path d="M0 -120 C35 -65 55 5 0 70 C-55 5 -35 -65 0 -120 Z" fill="#641E2B" opacity="0.15"/>
+    <circle cx="0" cy="-25" r="14" fill="#C5A15B"/>
+    <text y="170" font-family="'Cormorant Garamond', Georgia, serif" font-size="36" font-weight="600" letter-spacing="4" fill="#641E2B">VASTRAA COUTURE</text>
+    <text y="205" font-family="'Inter', sans-serif" font-size="14" font-weight="500" letter-spacing="3" fill="#8C7343">ROYAL WOMEN'S COLLECTION</text>
+  </g>
+</svg>
