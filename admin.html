@@ -3040,6 +3040,7 @@
 
     const orderModalElem = document.getElementById("order-details-modal");
     orderModalElem?.addEventListener("click", (e) => {
+      if (e.target !== orderModalElem) return;
       const rect = orderModalElem.getBoundingClientRect();
       const isOutside = (
         e.clientX < rect.left ||
@@ -3047,7 +3048,7 @@
         e.clientY < rect.top ||
         e.clientY > rect.bottom
       );
-      if (isOutside || e.target === orderModalElem) {
+      if (isOutside) {
         closeOrderModal();
       }
     });
@@ -3134,7 +3135,12 @@
 
     // Local PC file upload for Studio Primary Image
     const studioImgFileInput = document.getElementById("studio-img-file");
-    document.getElementById("btn-studio-browse-file")?.addEventListener("click", () => {
+    studioImgFileInput?.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+    document.getElementById("btn-studio-browse-file")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       studioImgFileInput?.click();
     });
 
@@ -3481,6 +3487,7 @@
       closeEditProductModal();
     });
     editModal?.addEventListener("click", (e) => {
+      if (e.target !== editModal) return;
       const rect = editModal.getBoundingClientRect();
       const isOutside = (
         e.clientX < rect.left ||
@@ -3488,7 +3495,7 @@
         e.clientY < rect.top ||
         e.clientY > rect.bottom
       );
-      if (isOutside || e.target === editModal) {
+      if (isOutside) {
         closeEditProductModal();
       }
     });
@@ -3497,7 +3504,12 @@
     });
 
     // Browse file from local PC for Edit Modal Primary Image
-    btnEditBrowseFile?.addEventListener("click", () => {
+    editImgFileInput?.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+    btnEditBrowseFile?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       editImgFileInput?.click();
     });
 
@@ -3549,7 +3561,12 @@
 
     // Upload Photo to Gallery from local PC in Edit Modal
     const editGalleryFileInput = document.getElementById("edit-gallery-file");
-    document.getElementById("btn-edit-gallery-upload")?.addEventListener("click", () => {
+    editGalleryFileInput?.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+    document.getElementById("btn-edit-gallery-upload")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       editGalleryFileInput?.click();
     });
 

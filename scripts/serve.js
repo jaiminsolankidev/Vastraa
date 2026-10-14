@@ -111,7 +111,7 @@ const server = http.createServer((req, res) => {
       "Content-Type": contentType,
       "X-Content-Type-Options": "nosniff",
       "X-Frame-Options": "SAMEORIGIN",
-      "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=3600"
+      "Cache-Control": "no-cache, must-revalidate"
     });
 
     const stream = fs.createReadStream(filePath);

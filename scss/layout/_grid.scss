@@ -102,10 +102,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: $space-2xl;
+  align-items: start;
 
   @include respond-to("desktop-sm") {
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
     gap: $space-3xl;
+    align-items: start;
   }
 }
 

@@ -5,7 +5,7 @@
   "main": "js/main.js",
   "type": "module",
   "scripts": {
-    "build:css": "sass scss/main.scss css/main.css --no-source-map --style=compressed",
+    "build:css": "sass scss/main.scss css/main.css --no-source-map --style=compressed && node -e \"const fs=require('fs');let b=fs.readFileSync('css/main.css');if(b[0]===0xEF&&b[1]===0xBB&&b[2]===0xBF){fs.writeFileSync('css/main.css',b.subarray(3));}\"",
     "watch:css": "sass scss/main.scss css/main.css --watch",
     "dev": "node scripts/serve.js",
     "test": "node --test tests/*.test.js",

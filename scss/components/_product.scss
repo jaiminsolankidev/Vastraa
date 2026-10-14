@@ -10,10 +10,15 @@
   display: flex;
   flex-direction: column-reverse;
   gap: $space-md;
+  align-self: start;
+  min-width: 0;
 
   @include respond-to("tablet") {
     flex-direction: row;
     gap: $space-lg;
+    position: sticky;
+    top: 100px;
+    align-self: start;
   }
 
   // Thumbnails Strip
@@ -21,6 +26,7 @@
     display: flex;
     gap: $space-xs;
     overflow-x: auto;
+    align-self: start;
 
     @include respond-to("tablet") {
       flex-direction: column;
@@ -61,11 +67,15 @@
   &__main {
     position: relative;
     flex: 1;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
     aspect-ratio: 4 / 5;
     background-color: $color-sand-light;
     border-radius: $radius-sm;
     overflow: hidden;
     border: 1px solid $color-border;
+    align-self: start;
 
     img {
       width: 100%;
@@ -73,6 +83,7 @@
       object-fit: cover;
       object-position: center top;
       transition: transform $transition-base;
+      display: block;
     }
   }
 }
@@ -81,6 +92,7 @@
 .product-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 
   &__eyebrow {
     font-size: 0.8125rem;

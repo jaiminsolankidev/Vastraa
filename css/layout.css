@@ -89,6 +89,22 @@
   grid-template-columns: 0.85fr 1.15fr;
 }
 
+/* Product Details Page 2-Column Grid */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .product-detail-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 3.5rem;
+    align-items: start;
+  }
+}
+
 /* E-Commerce Checkout & Cart 2-Column Layout */
 .commerce-split {
   display: grid;
